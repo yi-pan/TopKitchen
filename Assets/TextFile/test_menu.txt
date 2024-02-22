@@ -1,0 +1,4 @@
+Beef Stew:5;roasted chicken:2
+soup;salad
+fries;mashed potato
+ice cream;cake
