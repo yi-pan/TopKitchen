@@ -1,0 +1,7 @@
+fried:3
+girll:1
+boil:3
+steam:3
+bake:3
+prepare:3
+talent:shell,fruit,egg

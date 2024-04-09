@@ -570,9 +570,11 @@ GameObject:
   - component: {fileID: 113059703}
   - component: {fileID: 113059702}
   - component: {fileID: 113059701}
+  - component: {fileID: 113059704}
+  - component: {fileID: 113059705}
   m_Layer: 0
-  m_Name: chefE_FreeMan
-  m_TagString: Untagged
+  m_Name: Mom
+  m_TagString: Chef
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -665,6 +667,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 113059699}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &113059704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113059699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe45a2e66a1941b1ba5cacf5217041c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textFile: {fileID: 4900000, guid: 0f1151c044e5f4273a8c2d44859df834, type: 3}
+  fried: 0
+  grill: 0
+  boil: 0
+  steam: 0
+  bake: 0
+  prepare: 0
+  materials: []
+  fastCook: 1
+--- !u!54 &113059705
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113059699}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!850595691 &150450051
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -920,9 +970,11 @@ GameObject:
   - component: {fileID: 313880912}
   - component: {fileID: 313880911}
   - component: {fileID: 313880910}
+  - component: {fileID: 313880913}
+  - component: {fileID: 313880914}
   m_Layer: 0
-  m_Name: chefB
-  m_TagString: Untagged
+  m_Name: Dalao
+  m_TagString: Chef
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1015,6 +1067,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313880908}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &313880913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313880908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe45a2e66a1941b1ba5cacf5217041c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textFile: {fileID: 4900000, guid: 75dd998bf65684694910c88b76fa4535, type: 3}
+  fried: 0
+  grill: 0
+  boil: 0
+  steam: 0
+  bake: 0
+  prepare: 0
+  materials:
+  - shell
+  - fruit
+  - egg
+  fastCook: 0
+--- !u!54 &313880914
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313880908}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,8 +1650,6 @@ Transform:
   m_Children:
   - {fileID: 9437576}
   - {fileID: 1924115955}
-  - {fileID: 1785975479}
-  - {fileID: 574743022}
   - {fileID: 1133978455}
   - {fileID: 1119611267}
   - {fileID: 1683598610}
@@ -1572,9 +1673,11 @@ GameObject:
   - component: {fileID: 494571312}
   - component: {fileID: 494571311}
   - component: {fileID: 494571310}
+  - component: {fileID: 494571313}
+  - component: {fileID: 494571314}
   m_Layer: 0
-  m_Name: chefC
-  m_TagString: Untagged
+  m_Name: Shixi
+  m_TagString: Chef
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1667,6 +1770,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494571308}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &494571313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494571308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe45a2e66a1941b1ba5cacf5217041c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textFile: {fileID: 4900000, guid: 615cf55835c60489cb28c56dac866aa6, type: 3}
+  fried: 0
+  grill: 0
+  boil: 0
+  steam: 0
+  bake: 0
+  prepare: 0
+  materials:
+  - bug
+  fastCook: 0
+--- !u!54 &494571314
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494571308}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!1 &499509832
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,9 +3165,11 @@ GameObject:
   - component: {fileID: 553768446}
   - component: {fileID: 553768445}
   - component: {fileID: 553768444}
+  - component: {fileID: 553768447}
+  - component: {fileID: 553768448}
   m_Layer: 0
-  m_Name: chefD
-  m_TagString: Untagged
+  m_Name: Zhongyong
+  m_TagString: Chef
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3108,6 +3262,56 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553768442}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &553768447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553768442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe45a2e66a1941b1ba5cacf5217041c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textFile: {fileID: 4900000, guid: d78b9d5d021314f7ba77e71073426315, type: 3}
+  fried: 0
+  grill: 0
+  boil: 0
+  steam: 0
+  bake: 0
+  prepare: 0
+  materials:
+  - ferment
+  - milk
+  fastCook: 0
+--- !u!54 &553768448
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553768442}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!1 &571553061
 GameObject:
   m_ObjectHideFlags: 0
@@ -3225,8 +3429,9 @@ GameObject:
   - component: {fileID: 574743025}
   - component: {fileID: 574743024}
   - component: {fileID: 574743023}
+  - component: {fileID: 574743026}
   m_Layer: 0
-  m_Name: main (2)
+  m_Name: Drink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3241,11 +3446,11 @@ Transform:
   m_GameObject: {fileID: 574743021}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.0000022500753, z: -0, w: 1}
-  m_LocalPosition: {x: -1.78, y: 1, z: 12.54}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 0.2, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 481766905}
+  m_Father: {fileID: 1278392453}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &574743023
 BoxCollider:
@@ -3266,8 +3471,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 2.5125408}
+  m_Center: {x: 2.6916552e-14, y: 0, z: -0.75627047}
 --- !u!23 &574743024
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3318,6 +3523,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574743021}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &574743026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574743021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a0094ab54734a0bba4741c64480a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSeconds: 0
+  dishes: []
+  currentDish: {fileID: 0}
+  workload: 0
+  workPerSecond: 0
 --- !u!1 &582140916
 GameObject:
   m_ObjectHideFlags: 0
@@ -3495,7 +3717,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593764055}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &593764058
 Camera:
   m_ObjectHideFlags: 0
@@ -4224,8 +4446,9 @@ GameObject:
   - component: {fileID: 898777387}
   - component: {fileID: 898777386}
   - component: {fileID: 898777385}
+  - component: {fileID: 898777388}
   m_Layer: 0
-  m_Name: main (1)
+  m_Name: SideDish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4239,12 +4462,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898777383}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000022649763}
-  m_LocalPosition: {x: 0.008666674, y: 0.5, z: -0.07000018}
-  m_LocalScale: {x: 0.8333333, y: 0.2, z: 0.8000001}
+  m_LocalRotation: {x: -0, y: -0.7071053, z: -0, w: 0.7071084}
+  m_LocalPosition: {x: 5.6499996, y: 0, z: -7.2620006}
+  m_LocalScale: {x: 5, y: 0.2, z: 1.6000007}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1032114508}
+  m_Father: {fileID: 1278392453}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &898777385
 BoxCollider:
@@ -4265,8 +4488,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 2.1282325}
+  m_Center: {x: 7.65383e-15, y: 0, z: 0.56411755}
 --- !u!23 &898777386
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4317,6 +4540,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898777383}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &898777388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898777383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a0094ab54734a0bba4741c64480a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSeconds: 0
+  dishes: []
+  currentDish: {fileID: 0}
+  workload: 0
+  workPerSecond: 0
 --- !u!43 &938906780
 Mesh:
   m_ObjectHideFlags: 0
@@ -4974,8 +5214,7 @@ Transform:
   m_LocalPosition: {x: 4.0099998, y: 0.5, z: 5.33}
   m_LocalScale: {x: 6, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 898777384}
+  m_Children: []
   m_Father: {fileID: 9437576}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1032114509
@@ -5542,6 +5781,41 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243256194}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1278392452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1278392453}
+  m_Layer: 0
+  m_Name: Cooking
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1278392453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278392452}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.84, y: 0.878638, z: 11.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1336840971}
+  - {fileID: 898777384}
+  - {fileID: 1785975479}
+  - {fileID: 574743022}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1303464006
 GameObject:
   m_ObjectHideFlags: 0
@@ -5588,8 +5862,9 @@ GameObject:
   - component: {fileID: 1336840974}
   - component: {fileID: 1336840973}
   - component: {fileID: 1336840972}
+  - component: {fileID: 1336840975}
   m_Layer: 0
-  m_Name: main (1)
+  m_Name: MainDish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5603,12 +5878,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336840970}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000022649763}
-  m_LocalPosition: {x: 0.008666674, y: 0.5, z: -0.07000018}
-  m_LocalScale: {x: 0.8333333, y: 0.2, z: 0.8000001}
+  m_LocalRotation: {x: -0, y: -0.7071053, z: -0, w: 0.7071084}
+  m_LocalPosition: {x: 0.62999964, y: 0, z: -7.2620006}
+  m_LocalScale: {x: 5, y: 0.2, z: 1.6000007}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1705616206}
+  m_Father: {fileID: 1278392453}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &1336840972
 BoxCollider:
@@ -5629,8 +5904,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 2.0789604}
+  m_Center: {x: -3.2945865e-14, y: 0, z: 0.5394807}
 --- !u!23 &1336840973
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5681,6 +5956,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336840970}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1336840975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336840970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a0094ab54734a0bba4741c64480a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSeconds: 0
+  dishes: []
+  currentDish: {fileID: 0}
+  workload: 0
+  workPerSecond: 0
 --- !u!1 &1381887618
 GameObject:
   m_ObjectHideFlags: 0
@@ -6428,8 +6720,7 @@ Transform:
   m_LocalPosition: {x: -1.0100002, y: 0.5, z: 5.33}
   m_LocalScale: {x: 6, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1336840971}
+  m_Children: []
   m_Father: {fileID: 9437576}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1705616207
@@ -6515,8 +6806,9 @@ GameObject:
   - component: {fileID: 1785975482}
   - component: {fileID: 1785975481}
   - component: {fileID: 1785975480}
+  - component: {fileID: 1785975483}
   m_Layer: 0
-  m_Name: main (3)
+  m_Name: Dessert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6531,11 +6823,11 @@ Transform:
   m_GameObject: {fileID: 1785975478}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071053, z: -0, w: 0.7071084}
-  m_LocalPosition: {x: -7.31, y: 1, z: 5.51}
-  m_LocalScale: {x: 5, y: 0.2, z: 1.6}
+  m_LocalPosition: {x: -5.5299997, y: 0, z: -7.03}
+  m_LocalScale: {x: 5, y: 0.2, z: 1.6000006}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 481766905}
+  m_Father: {fileID: 1278392453}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &1785975480
 BoxCollider:
@@ -6556,8 +6848,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 2.1773512}
+  m_Center: {x: -3.8083997e-14, y: 0, z: -0.58867526}
 --- !u!23 &1785975481
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6608,6 +6900,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785975478}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1785975483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785975478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a0094ab54734a0bba4741c64480a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSeconds: 0
+  dishes: []
+  currentDish: {fileID: 0}
+  workload: 0
+  workPerSecond: 0
 --- !u!1 &1805474077
 GameObject:
   m_ObjectHideFlags: 0
@@ -7327,9 +7636,11 @@ GameObject:
   - component: {fileID: 2103200474}
   - component: {fileID: 2103200473}
   - component: {fileID: 2103200472}
+  - component: {fileID: 2103200475}
+  - component: {fileID: 2103200476}
   m_Layer: 0
-  m_Name: chefA
-  m_TagString: Untagged
+  m_Name: BKing
+  m_TagString: Chef
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7422,6 +7733,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103200470}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2103200475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103200470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe45a2e66a1941b1ba5cacf5217041c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textFile: {fileID: 4900000, guid: 232ed888db1b44221a8dc50e84971684, type: 3}
+  fried: 0
+  grill: 0
+  boil: 0
+  steam: 0
+  bake: 0
+  prepare: 0
+  materials:
+  - fish
+  - meat
+  - fruit
+  fastCook: 1
+--- !u!54 &2103200476
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103200470}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!1 &2112210861
 GameObject:
   m_ObjectHideFlags: 0
@@ -7537,6 +7899,7 @@ SceneRoots:
   - {fileID: 593764059}
   - {fileID: 410087041}
   - {fileID: 832575519}
+  - {fileID: 1278392453}
   - {fileID: 481766905}
   - {fileID: 85221282}
   - {fileID: 499509833}

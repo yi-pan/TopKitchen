@@ -1,0 +1,7 @@
+fried:4
+girll:3
+boil:4
+steam:4
+bake:2
+prepare:4
+talent:shell,egg

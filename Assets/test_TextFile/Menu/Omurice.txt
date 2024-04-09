@@ -1,0 +1,7 @@
+fried:3
+girll:4
+boil:5
+steam:5
+bake:4
+prepare:5
+talent:fish,meat,fruit

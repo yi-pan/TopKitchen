@@ -1,0 +1,7 @@
+fried:1
+girll:1
+boil:2
+steam:2
+bake:1
+prepare:1
+talent:bug

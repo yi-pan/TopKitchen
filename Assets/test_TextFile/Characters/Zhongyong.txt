@@ -1,0 +1,7 @@
+fried:2
+girll:1
+boil:2
+steam:1
+bake:4
+prepare:2
+talent:ferment,milk
