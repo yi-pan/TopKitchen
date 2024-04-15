@@ -10,4 +10,6 @@ public class Dish : MonoBehaviour
     public float avg_price;
     public string[] materialList;
     public string[] cookingList;
+    public Texture uncooked;
+    public Texture cooked;
 }
