@@ -26,7 +26,7 @@ public class CookTable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("collide");
+        //Debug.Log("collide");
         if (collision.gameObject.tag == "Chef" && currentDish != null)
         {
             //add the amount to the equation
@@ -71,7 +71,7 @@ public class CookTable : MonoBehaviour
             }
         }
         Debug.Log("material match" + material_num);
-        float finalAddUp = skillAddUp * 0.07f + ((float)material_num / materials.Length) * 0.01f + chef.GetComponent<Chef>().fastCook*0.02f;
+        float finalAddUp = skillAddUp * 0.07f + ((float)material_num / materials.Length) * 0.1f + chef.GetComponent<Chef>().fastCook*0.2f;
         Debug.Log(finalAddUp);
         return finalAddUp;
     }

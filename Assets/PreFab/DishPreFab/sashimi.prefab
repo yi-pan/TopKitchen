@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6916667673556591344}
   - component: {fileID: 3918980618543895514}
   - component: {fileID: 735134094656577880}
+  - component: {fileID: 9202185872490983918}
   m_Layer: 0
   m_Name: sashimi
-  m_TagString: Untagged
+  m_TagString: Dish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,6 +61,8 @@ MonoBehaviour:
   - prepare
   uncooked: {fileID: 2800000, guid: 6e84c4c0eea1b4a6984df8fb6a8e4410, type: 3}
   cooked: {fileID: 2800000, guid: 799201818345c46ab974f6a1908bbcfd, type: 3}
+  thisImage: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!222 &3918980618543895514
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -95,3 +98,15 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &9202185872490983918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2170765661195981156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54b43baabf804b38a15ea869b1f8ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6916667673556591344}
   - component: {fileID: 5003240647941114121}
   - component: {fileID: 7753545548583415934}
+  - component: {fileID: -4196721362686703982}
   m_Layer: 0
   m_Name: dudu soup
-  m_TagString: Untagged
+  m_TagString: Dish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,6 +62,8 @@ MonoBehaviour:
   - boil
   uncooked: {fileID: 2800000, guid: d75a31f67f11444f7ac6ac60e3c6a18a, type: 3}
   cooked: {fileID: 2800000, guid: 2c08bd9e135f941d9be22144fc40c266, type: 3}
+  thisImage: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!222 &5003240647941114121
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -96,3 +99,15 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &-4196721362686703982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2170765661195981156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54b43baabf804b38a15ea869b1f8ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

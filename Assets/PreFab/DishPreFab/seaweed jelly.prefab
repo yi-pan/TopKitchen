@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6916667673556591344}
   - component: {fileID: 842051827481532377}
   - component: {fileID: 8688854886753287049}
+  - component: {fileID: -3857177282521997906}
   m_Layer: 0
   m_Name: seaweed jelly
-  m_TagString: Untagged
+  m_TagString: Dish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,6 +62,8 @@ MonoBehaviour:
   - prepare
   uncooked: {fileID: 2800000, guid: 10739afe2d129443c9c1666dcebb6538, type: 3}
   cooked: {fileID: 2800000, guid: aba153f00c35c427bb0cbe2fadcf8962, type: 3}
+  thisImage: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!222 &842051827481532377
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -96,3 +99,15 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &-3857177282521997906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2170765661195981156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54b43baabf804b38a15ea869b1f8ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
