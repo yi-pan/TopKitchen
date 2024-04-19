@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bc00f20034c673d4eab52dd7910985f1
+guid: d47e3ebf94ff3324eab4b4e8f7fa38cd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Egg_0
+      name: bk_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 26
-        height: 26
+        x: 0
+        y: 0
+        width: 10
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c96e6806cdf46143ab48bc0ae687e1e
-      internalID: 522626872
+      spriteID: d8a85e5a15cdde94499c1b76758781e0
+      internalID: 317931467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bk_1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 10
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde17903cd0717b4f8473b07ce15f0cf
+      internalID: 1700026532
       vertices: []
       indices: 
       edges: []
@@ -154,7 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Egg_0: 522626872
+      bk_0: 317931467
+      bk_1: 1700026532
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
