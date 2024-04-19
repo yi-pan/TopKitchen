@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Dish : MonoBehaviour, IDragHandler
+public class Dish : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     public string type;
     public float hardness;
@@ -33,12 +33,13 @@ public class Dish : MonoBehaviour, IDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = eventData.position;
+        //Debug.Log("dragging");
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        //Debug.Log("end drag");
         transform.position = startPosition;
         thisImage.raycastTarget = true;
     }
-
 }

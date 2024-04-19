@@ -16,8 +16,13 @@ public class CookTable : MonoBehaviour
 
     //workload info
     public float workload;
+    float overallWork;
     private bool canChange;
     public float workPerSecond = 0.0f;
+
+    //loading info
+    public Animator loadingBar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,9 +38,7 @@ public class CookTable : MonoBehaviour
             float addUp = CalculateAddUp(collision.gameObject);
             workPerSecond += 5f * (1 + addUp);
             Debug.Log(workPerSecond);
-        }
-
-        if (collision.gameObject.tag == "Chef" && currentDish == null)
+        } else if (collision.gameObject.tag == "Chef" && currentDish == null)
         {
             currentChefs.Add(collision.gameObject);
         }
@@ -43,11 +46,15 @@ public class CookTable : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
+
         if (collision.gameObject.tag == "Chef" && currentDish != null)
         {
             //delete the amount from the equation
             float addUp = CalculateAddUp(collision.gameObject);
             workPerSecond -= 5f * (1 + addUp);
+        } else if (collision.gameObject.tag == "Chef" && currentDish == null)
+        {
+            currentChefs.Remove(collision.gameObject);
         }
     }
 
@@ -70,7 +77,7 @@ public class CookTable : MonoBehaviour
                 material_num += 1;
             }
         }
-        Debug.Log("material match" + material_num);
+        //Debug.Log("material match" + material_num);
         float finalAddUp = skillAddUp * 0.07f + ((float)material_num / materials.Length) * 0.1f + chef.GetComponent<Chef>().fastCook*0.2f;
         Debug.Log(finalAddUp);
         return finalAddUp;
@@ -82,12 +89,14 @@ public class CookTable : MonoBehaviour
         if (canChange && currentDish != null)
         {
             workload = currentDish.GetComponent<Dish>().workload;
+            overallWork = workload;
             materials = currentDish.GetComponent<Dish>().materialList;
             cookings = currentDish.GetComponent<Dish>().cookingList;
             foreach(GameObject Chef in currentChefs)
             {
                 Debug.Log(Chef.name);
                 workPerSecond += 5f * (1 + CalculateAddUp(Chef));
+                
             }
             canChange = false;
         }
@@ -99,9 +108,11 @@ public class CookTable : MonoBehaviour
             timer = 0.0f;
             gameSeconds += 1;
             workload -= workPerSecond;
+            loadingBar.SetFloat("LoadingTime", (overallWork - workload) / overallWork);
             if (workload <= 0)
             {
                 workPerSecond = 0;
+                overallWork = 0;
                 canChange = true;
                 currentDish = null;
             }
