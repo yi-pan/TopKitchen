@@ -114,6 +114,7 @@ public class CookTable : MonoBehaviour
                 workPerSecond = 0;
                 overallWork = 0;
                 canChange = true;
+                currentDish.GetComponent<Dish>().cooked_status = true;
                 currentDish = null;
             }
         }

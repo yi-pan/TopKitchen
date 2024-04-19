@@ -16,7 +16,10 @@ public class DishDrop : MonoBehaviour, IDropHandler
             {
                 //Debug.Log("collide");
                 draggable.startPosition = transform.position;
-                cookTable.GetComponent<CookTable>().currentDish = eventData.pointerDrag.gameObject;
+                if (this.gameObject.tag == "Table")
+                {
+                    cookTable.GetComponent<CookTable>().currentDish = eventData.pointerDrag.gameObject;
+                } 
             }
         }
     }
