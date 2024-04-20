@@ -14,7 +14,7 @@ public class DishToday : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     public bool is_selected = false; // true -> activate layer_bk, layer_dish
     public bool is_selecting = false; // true -> active layer_select
 
-    GameObject layer_add, layer_lock, layer_bk, layer_select, layer_dish;
+    public GameObject layer_add, layer_lock, layer_bk, layer_select, layer_dish;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -41,7 +41,6 @@ public class DishToday : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         Debug.Log("mouse up");
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         dishGroup.Subscribe(this);
@@ -52,19 +51,23 @@ public class DishToday : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         layer_dish = transform.GetChild(4).gameObject;
 
         layer_add.SetActive(true);
-    }
-
-    void Update()
-    {
-        if (is_locked)
-        {
-            is_selecting = false;
-            is_selected = false;
-        }
         layer_lock.SetActive(is_locked);
         layer_select.SetActive(is_selecting);
         layer_bk.SetActive(is_selected);
         layer_dish.SetActive(is_selected);
+    }
+
+    void Update()
+    {
+        //if (is_locked)
+        //{
+        //    is_selecting = false;
+        //    is_selected = false;
+        //}
+        //layer_lock.SetActive(is_locked);
+        //layer_select.SetActive(is_selecting);
+        //layer_bk.SetActive(is_selected);
+        //layer_dish.SetActive(is_selected);
 
     }
 }
