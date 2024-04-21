@@ -31,11 +31,18 @@ public class DishGroup : MonoBehaviour
     public DishToday dish_selected;
     public void OnDishSelected(DishToday dish)
     {
-        if (dish_selected) dish_selected.layer_select.SetActive(false);
-        dish_selected = dish;
-        dish.layer_bk.SetActive(dish.is_selected);
-        dish.layer_select.SetActive(true);
-        dish.is_selecting = true;
+        if (!dish.is_locked)
+        {
+            if (dish_selected)
+            {
+                dish_selected.layer_select.SetActive(false);
+                dish_selected.is_selecting = false;
+            }
+            dish_selected = dish;
+            dish.layer_bk.SetActive(dish.is_selected);
+            dish.layer_select.SetActive(true);
+            dish.is_selecting = true;
+        }
     }
 
     //public void ResetDish()
