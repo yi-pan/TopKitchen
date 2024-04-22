@@ -40,8 +40,6 @@ public class DishDetail : MonoBehaviour
         boil = dish_cookingList.transform.GetChild(3).gameObject;
         steam = dish_cookingList.transform.GetChild(4).gameObject;
         prepare = dish_cookingList.transform.GetChild(5).gameObject;
-
-        //SetDishDetail("dudu_soup");
     }
     public void SetDishDetail(string name)
     {
@@ -101,7 +99,6 @@ public class DishDetail : MonoBehaviour
             if (ingredientList[i].type.Equals("coral")) type_img.sprite = ingred_type_sprite[9];
             if (ingredientList[i].type.Equals("root")) type_img.sprite = ingred_type_sprite[10];
             // set up count
-            Debug.Log(ingredientList[i].name + " " + ingredientList[i].type + " " + ingredientList[i].count);
             string count = "x ";
             count += ingredientList[i].count.ToString("0");
             ingred.transform.GetChild(3).GetComponent<TMP_Text>().text = count;

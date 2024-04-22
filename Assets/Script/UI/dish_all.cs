@@ -76,12 +76,14 @@ public class DishAll : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 
         if (is_selecting)
         {
-            dishAllGroup.OnDishSelected(this);
+            dishAllGroup.OnDishEnter(this);
         }
+        
     }
 
     void Update()
     {
-        SetDishImage();
+        layer_select.SetActive(is_selecting);
+        layer_selected.SetActive(is_selected);
     }
 }

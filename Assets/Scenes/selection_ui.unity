@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50.095, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4048413
@@ -743,6 +743,15 @@ MonoBehaviour:
   layer_bk: {fileID: 0}
   layer_select: {fileID: 0}
   layer_dish: {fileID: 0}
+  img_dish: {fileID: 0}
+  dishSprite:
+  - {fileID: 1062674843, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -13846268, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -793623346, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -1845961030, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 1365769437, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 563217210, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  dish_name: 
 --- !u!1 &41069764 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7632127377178124813, guid: f6d50562ea853e34c850fd895b7e1a44,
@@ -1550,7 +1559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 38.7, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &75018602
@@ -1780,7 +1789,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50.095, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &105229166
@@ -1928,8 +1937,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34, y: -36.013}
-  m_SizeDelta: {x: 90, y: 32}
+  m_AnchoredPosition: {x: 38, y: -36.013}
+  m_SizeDelta: {x: 100, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &105622209
 MonoBehaviour:
@@ -1978,8 +1987,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2659,6 +2668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 142217422}
   - component: {fileID: 142217423}
+  - component: {fileID: 142217424}
   m_Layer: 5
   m_Name: chef_selected
   m_TagString: Untagged
@@ -2713,6 +2723,23 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &142217424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142217421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9835b9d63560b2e4b8f5c6a23ee007d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main_chef: {fileID: 465517077}
+  side_chef: {fileID: 1334345998}
+  dessert_chef: {fileID: 385380354}
+  beverage_chef: {fileID: 399570078}
+  shopping_chef: {fileID: 1884629352}
 --- !u!1 &148506139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,6 +2802,15 @@ MonoBehaviour:
   layer_bk: {fileID: 0}
   layer_select: {fileID: 0}
   layer_dish: {fileID: 0}
+  img_dish: {fileID: 0}
+  dishSprite:
+  - {fileID: 1062674843, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -13846268, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -793623346, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -1845961030, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 1365769437, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 563217210, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  dish_name: 
 --- !u!1 &148918056
 GameObject:
   m_ObjectHideFlags: 0
@@ -2912,6 +2948,15 @@ MonoBehaviour:
   layer_bk: {fileID: 0}
   layer_select: {fileID: 0}
   layer_dish: {fileID: 0}
+  img_dish: {fileID: 0}
+  dishSprite:
+  - {fileID: 1062674843, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -13846268, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -793623346, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -1845961030, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 1365769437, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 563217210, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  dish_name: 
 --- !u!1 &152110577
 GameObject:
   m_ObjectHideFlags: 0
@@ -4169,8 +4214,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34, y: -36.013}
-  m_SizeDelta: {x: 90, y: 32}
+  m_AnchoredPosition: {x: 38, y: -36.013}
+  m_SizeDelta: {x: 100, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &229671864
 MonoBehaviour:
@@ -4219,8 +4264,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4568,7 +4613,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dishes: []
   dish_detail: {fileID: 1633688889}
-  dish_selected: {fileID: 0}
+  dish_selected: {fileID: 8981790384853815407}
+  dishes_today: {fileID: 880538837}
 --- !u!1 &271952272
 GameObject:
   m_ObjectHideFlags: 0
@@ -5526,7 +5572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 59.300003, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &347269302
@@ -5946,6 +5992,7 @@ GameObject:
   - component: {fileID: 385380351}
   - component: {fileID: 385380353}
   - component: {fileID: 385380352}
+  - component: {fileID: 385380354}
   m_Layer: 5
   m_Name: dessert
   m_TagString: Untagged
@@ -6016,6 +6063,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385380350}
   m_CullTransparentMesh: 1
+--- !u!114 &385380354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385380350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ca223f155691f44969829211d1f1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_locked: 1
+  profile: {fileID: 0}
+  name: {fileID: 0}
+  ability_cook: {fileID: 0}
+  fried: {fileID: 0}
+  grill: {fileID: 0}
+  bake: {fileID: 0}
+  boil: {fileID: 0}
+  steam: {fileID: 0}
+  prepare: {fileID: 0}
+  ability_ingred: {fileID: 0}
+  ingred1: {fileID: 0}
+  ingred2: {fileID: 0}
+  ingred3: {fileID: 0}
+  ingred4: {fileID: 0}
+  ingred_icons:
+  - {fileID: 720849271, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 2019489248, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1467424269, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 158859082, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: -1000875669, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 2035401155, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: -1062435605, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1334355208, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1565161748, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 274517136, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 774071831, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
 --- !u!1 &397253382
 GameObject:
   m_ObjectHideFlags: 0
@@ -6208,6 +6294,7 @@ GameObject:
   - component: {fileID: 399570075}
   - component: {fileID: 399570077}
   - component: {fileID: 399570076}
+  - component: {fileID: 399570078}
   m_Layer: 5
   m_Name: beverage
   m_TagString: Untagged
@@ -6278,6 +6365,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399570074}
   m_CullTransparentMesh: 1
+--- !u!114 &399570078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399570074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ca223f155691f44969829211d1f1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_locked: 1
+  profile: {fileID: 0}
+  name: {fileID: 0}
+  ability_cook: {fileID: 0}
+  fried: {fileID: 0}
+  grill: {fileID: 0}
+  bake: {fileID: 0}
+  boil: {fileID: 0}
+  steam: {fileID: 0}
+  prepare: {fileID: 0}
+  ability_ingred: {fileID: 0}
+  ingred1: {fileID: 0}
+  ingred2: {fileID: 0}
+  ingred3: {fileID: 0}
+  ingred4: {fileID: 0}
+  ingred_icons:
+  - {fileID: 720849271, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 2019489248, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1467424269, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 158859082, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: -1000875669, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 2035401155, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: -1062435605, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1334355208, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1565161748, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 274517136, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 774071831, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
 --- !u!1 &402649505
 GameObject:
   m_ObjectHideFlags: 0
@@ -6688,6 +6814,15 @@ MonoBehaviour:
   layer_bk: {fileID: 0}
   layer_select: {fileID: 0}
   layer_dish: {fileID: 0}
+  img_dish: {fileID: 0}
+  dishSprite:
+  - {fileID: 1062674843, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -13846268, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -793623346, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -1845961030, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 1365769437, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 563217210, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  dish_name: 
 --- !u!1 &465517073
 GameObject:
   m_ObjectHideFlags: 0
@@ -6699,6 +6834,7 @@ GameObject:
   - component: {fileID: 465517074}
   - component: {fileID: 465517076}
   - component: {fileID: 465517075}
+  - component: {fileID: 465517077}
   m_Layer: 5
   m_Name: main
   m_TagString: Untagged
@@ -6769,6 +6905,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465517073}
   m_CullTransparentMesh: 1
+--- !u!114 &465517077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465517073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ca223f155691f44969829211d1f1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_locked: 1
+  profile: {fileID: 0}
+  name: {fileID: 0}
+  ability_cook: {fileID: 0}
+  fried: {fileID: 0}
+  grill: {fileID: 0}
+  bake: {fileID: 0}
+  boil: {fileID: 0}
+  steam: {fileID: 0}
+  prepare: {fileID: 0}
+  ability_ingred: {fileID: 0}
+  ingred1: {fileID: 0}
+  ingred2: {fileID: 0}
+  ingred3: {fileID: 0}
+  ingred4: {fileID: 0}
+  ingred_icons:
+  - {fileID: 720849271, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 2019489248, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1467424269, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 158859082, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: -1000875669, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 2035401155, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: -1062435605, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1334355208, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1565161748, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 274517136, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 774071831, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
 --- !u!1 &469884274
 GameObject:
   m_ObjectHideFlags: 0
@@ -7029,7 +7204,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 38.7, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472442780
@@ -7178,7 +7353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 38.7, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &474924346
@@ -7876,7 +8051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 136.005, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &500826399
@@ -8696,7 +8871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 47.905, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532443111
@@ -9880,8 +10055,9 @@ GameObject:
   - component: {fileID: 629932954}
   - component: {fileID: 629932956}
   - component: {fileID: 629932955}
+  - component: {fileID: 629932957}
   m_Layer: 5
-  m_Name: chef (1)
+  m_Name: DaLao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9946,6 +10122,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629932953}
   m_CullTransparentMesh: 1
+--- !u!114 &629932957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629932953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b039234e15c634348bfdadb7595ca34d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chefSelect: {fileID: 142217424}
+  name: DaLao
+  fried: 0
+  grill: 0
+  boil: 0
+  steam: 0
+  bake: 0
+  prepare: 0
+  ability_ingred: []
+  is_selecting: 0
+  is_selected: 0
+  is_locked: 1
 --- !u!1 &634792776
 GameObject:
   m_ObjectHideFlags: 0
@@ -10115,7 +10315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 54.004997, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635213367
@@ -10425,6 +10625,15 @@ MonoBehaviour:
   layer_bk: {fileID: 0}
   layer_select: {fileID: 0}
   layer_dish: {fileID: 0}
+  img_dish: {fileID: 0}
+  dishSprite:
+  - {fileID: 1062674843, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -13846268, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -793623346, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -1845961030, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 1365769437, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 563217210, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  dish_name: 
 --- !u!1 &638859454
 GameObject:
   m_ObjectHideFlags: 0
@@ -10739,8 +10948,9 @@ GameObject:
   - component: {fileID: 673316407}
   - component: {fileID: 673316409}
   - component: {fileID: 673316408}
+  - component: {fileID: 673316410}
   m_Layer: 5
-  m_Name: chef
+  m_Name: BKing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10805,6 +11015,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673316406}
   m_CullTransparentMesh: 1
+--- !u!114 &673316410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673316406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b039234e15c634348bfdadb7595ca34d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chefSelect: {fileID: 142217424}
+  name: BKing
+  fried: 0
+  grill: 0
+  boil: 0
+  steam: 0
+  bake: 0
+  prepare: 0
+  ability_ingred: []
+  is_selecting: 0
+  is_selected: 0
+  is_locked: 1
 --- !u!1 &681224842
 GameObject:
   m_ObjectHideFlags: 0
@@ -11045,7 +11279,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50.095, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &709426423
@@ -12136,7 +12370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50.095, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &758347620
@@ -13993,7 +14227,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dishes: []
-  dish_selected: {fileID: 0}
+  dishesInOrder: []
+  dish_selected: {fileID: 6703657512944691654}
+  dish_next: {fileID: 0}
 --- !u!114 &880538838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14440,9 +14676,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 532443110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 54.004997, y: -14}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &923174944
@@ -14665,8 +14901,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34, y: -36.013}
-  m_SizeDelta: {x: 90, y: 32}
+  m_AnchoredPosition: {x: 38, y: -36.013}
+  m_SizeDelta: {x: 100, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &940896119
 MonoBehaviour:
@@ -14715,8 +14951,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -14803,7 +15039,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 59.300003, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &951668085
@@ -15797,9 +16033,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 347269301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50.095, y: -14}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1028849194
@@ -16174,9 +16410,9 @@ RectTransform:
   - {fileID: 758347619}
   m_Father: {fileID: 756248758}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 136.005, y: -14}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1057829034
@@ -16975,9 +17211,9 @@ RectTransform:
   - {fileID: 452596698}
   m_Father: {fileID: 880538834}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 388, y: 0}
   m_SizeDelta: {x: 60, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1154676547
@@ -17054,9 +17290,9 @@ RectTransform:
   - {fileID: 1210221381}
   m_Father: {fileID: 625128841}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 59.300003, y: -14}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1162375834
@@ -17470,9 +17706,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1162375833}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50.095, y: -14}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1210221382
@@ -17597,7 +17833,7 @@ GameObject:
   - component: {fileID: 1221734366}
   - component: {fileID: 1221734367}
   m_Layer: 5
-  m_Name: procedure
+  m_Name: ability_cook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18393,9 +18629,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 951668084}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50.095, y: -14}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1307774601
@@ -19024,6 +19260,7 @@ GameObject:
   - component: {fileID: 1334345995}
   - component: {fileID: 1334345997}
   - component: {fileID: 1334345996}
+  - component: {fileID: 1334345998}
   m_Layer: 5
   m_Name: side
   m_TagString: Untagged
@@ -19094,6 +19331,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334345994}
   m_CullTransparentMesh: 1
+--- !u!114 &1334345998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334345994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ca223f155691f44969829211d1f1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_locked: 1
+  profile: {fileID: 0}
+  name: {fileID: 0}
+  ability_cook: {fileID: 0}
+  fried: {fileID: 0}
+  grill: {fileID: 0}
+  bake: {fileID: 0}
+  boil: {fileID: 0}
+  steam: {fileID: 0}
+  prepare: {fileID: 0}
+  ability_ingred: {fileID: 0}
+  ingred1: {fileID: 0}
+  ingred2: {fileID: 0}
+  ingred3: {fileID: 0}
+  ingred4: {fileID: 0}
+  ingred_icons:
+  - {fileID: 720849271, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 2019489248, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1467424269, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 158859082, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: -1000875669, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 2035401155, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: -1062435605, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1334355208, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1565161748, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 274517136, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 774071831, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
 --- !u!1 &1337755280
 GameObject:
   m_ObjectHideFlags: 0
@@ -19130,9 +19406,9 @@ RectTransform:
   - {fileID: 2133355967}
   m_Father: {fileID: 404310787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 59.300003, y: -14}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337755282
@@ -19438,6 +19714,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349976853}
   m_CullTransparentMesh: 1
+--- !u!1 &1351319143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1351319145}
+  - component: {fileID: 1351319146}
+  m_Layer: 0
+  m_Name: CharacterList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1351319145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351319143}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1351319146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351319143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df75b4c59db20454aac04b8778267d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _file: {fileID: 4900000, guid: 755c5549667a4534bac7545b33a8707d, type: 3}
+  chefList:
+  - {fileID: 673316410}
+  - {fileID: 629932957}
+  - {fileID: 2128890478}
+  - {fileID: 1527644841}
+  - {fileID: 1937783236}
 --- !u!1 &1351629382
 GameObject:
   m_ObjectHideFlags: 0
@@ -20039,9 +20366,9 @@ RectTransform:
   - {fileID: 75018601}
   m_Father: {fileID: 404310787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 132.095, y: -14}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1384164949
@@ -20160,7 +20487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 132.095, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1391456071
@@ -20606,6 +20933,15 @@ MonoBehaviour:
   layer_bk: {fileID: 0}
   layer_select: {fileID: 0}
   layer_dish: {fileID: 0}
+  img_dish: {fileID: 0}
+  dishSprite:
+  - {fileID: 1062674843, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -13846268, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -793623346, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -1845961030, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 1365769437, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 563217210, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  dish_name: 
 --- !u!1 &1423634906
 GameObject:
   m_ObjectHideFlags: 0
@@ -20639,9 +20975,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 367768462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 54.004997, y: -14}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1423634908
@@ -21751,9 +22087,9 @@ RectTransform:
   - {fileID: 105229165}
   m_Father: {fileID: 530166577}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 136.005, y: -14}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1462479484
@@ -22343,8 +22679,9 @@ GameObject:
   - component: {fileID: 1527644838}
   - component: {fileID: 1527644840}
   - component: {fileID: 1527644839}
+  - component: {fileID: 1527644841}
   m_Layer: 5
-  m_Name: chef (3)
+  m_Name: Mama
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22409,6 +22746,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527644837}
   m_CullTransparentMesh: 1
+--- !u!114 &1527644841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527644837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b039234e15c634348bfdadb7595ca34d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chefSelect: {fileID: 142217424}
+  name: Mama
+  fried: 0
+  grill: 0
+  boil: 0
+  steam: 0
+  bake: 0
+  prepare: 0
+  ability_ingred: []
+  is_selecting: 0
+  is_selected: 0
+  is_locked: 1
 --- !u!1 &1540719428
 GameObject:
   m_ObjectHideFlags: 0
@@ -22443,9 +22804,9 @@ RectTransform:
   - {fileID: 1416799985}
   m_Father: {fileID: 880538834}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 304, y: 0}
   m_SizeDelta: {x: 60, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1540719430
@@ -22638,7 +22999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 132.095, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1565257840
@@ -22755,9 +23116,9 @@ RectTransform:
   - {fileID: 709426422}
   m_Father: {fileID: 522601586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 136.005, y: -14}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1567934071
@@ -23953,7 +24314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 54.004997, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1642025824
@@ -24538,9 +24899,9 @@ RectTransform:
   - {fileID: 1642025823}
   m_Father: {fileID: 522601586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 47.905, y: -14}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1687839227
@@ -25676,8 +26037,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34, y: -36.013}
-  m_SizeDelta: {x: 90, y: 32}
+  m_AnchoredPosition: {x: 38, y: -36.013}
+  m_SizeDelta: {x: 100, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791776122
 MonoBehaviour:
@@ -25726,8 +26087,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -25809,9 +26170,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1313169712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50.095, y: -14}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796300086
@@ -26698,7 +27059,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 38.7, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1824466462
@@ -26949,6 +27310,15 @@ MonoBehaviour:
   layer_bk: {fileID: 0}
   layer_select: {fileID: 0}
   layer_dish: {fileID: 0}
+  img_dish: {fileID: 0}
+  dishSprite:
+  - {fileID: 1062674843, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -13846268, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -793623346, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -1845961030, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 1365769437, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 563217210, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  dish_name: 
 --- !u!1 &1843194521
 GameObject:
   m_ObjectHideFlags: 0
@@ -27993,6 +28363,7 @@ GameObject:
   - component: {fileID: 1884629349}
   - component: {fileID: 1884629351}
   - component: {fileID: 1884629350}
+  - component: {fileID: 1884629352}
   m_Layer: 5
   m_Name: shopping
   m_TagString: Untagged
@@ -28063,6 +28434,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884629348}
   m_CullTransparentMesh: 1
+--- !u!114 &1884629352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884629348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ca223f155691f44969829211d1f1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_locked: 1
+  profile: {fileID: 0}
+  name: {fileID: 0}
+  ability_cook: {fileID: 0}
+  fried: {fileID: 0}
+  grill: {fileID: 0}
+  bake: {fileID: 0}
+  boil: {fileID: 0}
+  steam: {fileID: 0}
+  prepare: {fileID: 0}
+  ability_ingred: {fileID: 0}
+  ingred1: {fileID: 0}
+  ingred2: {fileID: 0}
+  ingred3: {fileID: 0}
+  ingred4: {fileID: 0}
+  ingred_icons:
+  - {fileID: 720849271, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 2019489248, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1467424269, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 158859082, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: -1000875669, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 2035401155, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: -1062435605, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1334355208, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 1565161748, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 274517136, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
+  - {fileID: 774071831, guid: 90117601e82836948aab1b1ee95062fb, type: 3}
 --- !u!1 &1889749550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5585922248287991146, guid: f6d50562ea853e34c850fd895b7e1a44,
@@ -28111,9 +28521,9 @@ RectTransform:
   - {fileID: 472442779}
   m_Father: {fileID: 625128841}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 132.095, y: -14}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1916945694
@@ -28588,9 +28998,9 @@ RectTransform:
   - {fileID: 4048412}
   m_Father: {fileID: 1606598652}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 59.3, y: -14}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1929048872
@@ -28682,8 +29092,9 @@ GameObject:
   - component: {fileID: 1937783233}
   - component: {fileID: 1937783235}
   - component: {fileID: 1937783234}
+  - component: {fileID: 1937783236}
   m_Layer: 5
-  m_Name: chef (4)
+  m_Name: Intern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28748,6 +29159,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937783232}
   m_CullTransparentMesh: 1
+--- !u!114 &1937783236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937783232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b039234e15c634348bfdadb7595ca34d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chefSelect: {fileID: 142217424}
+  name: Intern
+  fried: 0
+  grill: 0
+  boil: 0
+  steam: 0
+  bake: 0
+  prepare: 0
+  ability_ingred: []
+  is_selecting: 0
+  is_selected: 0
+  is_locked: 1
 --- !u!1 &1948804731
 GameObject:
   m_ObjectHideFlags: 0
@@ -28781,9 +29216,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 500826398}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50.095, y: -14}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948804733
@@ -28931,8 +29366,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34, y: -36.013}
-  m_SizeDelta: {x: 90, y: 32}
+  m_AnchoredPosition: {x: 38, y: -36.013}
+  m_SizeDelta: {x: 100, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1949596028
 MonoBehaviour:
@@ -28981,8 +29416,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -29366,9 +29801,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1565257839}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 38.7, y: -14}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1975305221
@@ -29515,9 +29950,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 736608969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 54.004997, y: -14}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1983156235
@@ -30360,6 +30795,15 @@ MonoBehaviour:
   layer_bk: {fileID: 0}
   layer_select: {fileID: 0}
   layer_dish: {fileID: 0}
+  img_dish: {fileID: 0}
+  dishSprite:
+  - {fileID: 1062674843, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -13846268, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -793623346, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -1845961030, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 1365769437, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 563217210, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  dish_name: 
 --- !u!114 &2048285061 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3783375808006115798, guid: f6d50562ea853e34c850fd895b7e1a44,
@@ -30824,6 +31268,15 @@ MonoBehaviour:
   layer_bk: {fileID: 0}
   layer_select: {fileID: 0}
   layer_dish: {fileID: 0}
+  img_dish: {fileID: 0}
+  dishSprite:
+  - {fileID: 1062674843, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -13846268, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -793623346, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -1845961030, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 1365769437, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 563217210, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  dish_name: 
 --- !u!1 &2073638801
 GameObject:
   m_ObjectHideFlags: 0
@@ -30936,9 +31389,9 @@ RectTransform:
   - {fileID: 635213366}
   m_Father: {fileID: 756248758}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 47.905, y: -14}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2077067030
@@ -31055,9 +31508,9 @@ RectTransform:
   - {fileID: 1824466461}
   m_Father: {fileID: 1509407276}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 132.095, y: -14}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2077450130
@@ -31394,8 +31847,9 @@ GameObject:
   - component: {fileID: 2128890475}
   - component: {fileID: 2128890477}
   - component: {fileID: 2128890476}
+  - component: {fileID: 2128890478}
   m_Layer: 5
-  m_Name: chef (2)
+  m_Name: BaoZao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31460,6 +31914,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128890474}
   m_CullTransparentMesh: 1
+--- !u!114 &2128890478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128890474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b039234e15c634348bfdadb7595ca34d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chefSelect: {fileID: 142217424}
+  name: BaoZao
+  fried: 0
+  grill: 0
+  boil: 0
+  steam: 0
+  bake: 0
+  prepare: 0
+  ability_ingred: []
+  is_selecting: 0
+  is_selected: 0
+  is_locked: 1
 --- !u!1 &2133355966
 GameObject:
   m_ObjectHideFlags: 0
@@ -31493,9 +31971,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1337755281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50.095, y: -14}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2133355968
@@ -33359,12 +33837,21 @@ MonoBehaviour:
   dishGroup: {fileID: 880538837}
   is_locked: 0
   is_selected: 0
-  is_selecting: 0
+  is_selecting: 1
   layer_add: {fileID: 0}
   layer_lock: {fileID: 0}
   layer_bk: {fileID: 0}
   layer_select: {fileID: 0}
   layer_dish: {fileID: 0}
+  img_dish: {fileID: 0}
+  dishSprite:
+  - {fileID: 1062674843, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -13846268, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -793623346, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: -1845961030, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 1365769437, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  - {fileID: 563217210, guid: 336899e0c3f47004db85df6c2aa3f59d, type: 3}
+  dish_name: 
 --- !u!222 &6750996373068253994
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34642,3 +35129,4 @@ SceneRoots:
   - {fileID: 783149071}
   - {fileID: 222211804}
   - {fileID: 1698499361}
+  - {fileID: 1351319145}
