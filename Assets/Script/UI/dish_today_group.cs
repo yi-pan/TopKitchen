@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -13,7 +14,7 @@ public class DishGroup : MonoBehaviour
     public DishToday dish_selected;
     public DishToday dish_next;
 
-    private bool is_full = false;
+    public bool is_full = false;
 
     private void Update()
     {
@@ -104,7 +105,7 @@ public class DishGroup : MonoBehaviour
         }
     }
 
-    
+    public int nextEmptyIndex = -1;
     public void OnDishSelected(DishToday dish)
     {
         if (!dish.is_locked)
@@ -113,27 +114,39 @@ public class DishGroup : MonoBehaviour
             {
                 dish_selected.layer_select.SetActive(false);
                 dish_selected.is_selecting = false;
+                
+                // click on selected ones we unselect the dish
+                Debug.Log(dish.dish_name);
             }
             dish_selected = dish;
             dish.layer_bk.SetActive(dish.is_selected);
             dish.layer_select.SetActive(true);
             dish.is_selecting = true;
+            if (is_full) nextEmptyIndex = dishesInOrder.IndexOf(dish_selected);
+            if (!is_full) FindNextEmptyIndex();
+            if(nextEmptyIndex >= 0) dish_next = dishesInOrder[nextEmptyIndex];
+        }
+    }
 
-            int index = 0;
-            foreach (DishToday d in dishesInOrder)
+    public void FindNextEmptyIndex()
+    {
+        if(!is_full) nextEmptyIndex = -1;
+        int index = 0;
+        foreach (DishToday d in dishesInOrder)
+        {
+            if (nextEmptyIndex <= 0 && d.dish_name == "")
             {
-                index++;
-                if (!d.is_selected)
-                {
-                    break;
-                }
+                nextEmptyIndex = index;
+                Debug.Log(nextEmptyIndex);
+                break;
             }
-            if (index == dishesInOrder.Count)
-            {
-                dish_next = dish;
-                is_full = true;
-            }
-            if (index < dishesInOrder.Count) dish_next = dishesInOrder[index];
+            index++;
+            
+        }
+        if (nextEmptyIndex < 0)
+        {
+            is_full = true;
+            nextEmptyIndex = dishesInOrder.Count-1;
         }
     }
 
@@ -145,16 +158,11 @@ public class DishGroup : MonoBehaviour
         dish_selected.is_selecting = false;
         dish_selected.SetDishImage();
         // set up dish_next
+        if(is_full) nextEmptyIndex = dishesInOrder.IndexOf(dish_selected);
+        if(!is_full)FindNextEmptyIndex();
+        dish_next = dishesInOrder[nextEmptyIndex];
         dish_next.is_selecting = true;
-        dish_selected = dish_next;
-        
-        if(!is_full)
-        {
-            int index = dishesInOrder.IndexOf(dish_selected) + 1;
-            if (index < dishesInOrder.Count) dish_next = dishesInOrder[index];
-        }
-        
-        
+        dish_selected = dish_next; 
     }
     //public void ResetDish()
     //{

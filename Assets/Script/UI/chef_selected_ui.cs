@@ -3,12 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ChefSelectedUI : MonoBehaviour
+public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public bool is_locked;
+    public bool is_selecting;
+    public bool is_selected;
 
+    public bool is_empty;
+
+    public ChefSelected chefSelected;
+
+    public GameObject selected_bk;
+    public GameObject add_bk;
     public GameObject profile;
     public GameObject name;
     public GameObject ability_cook;
@@ -22,8 +31,19 @@ public class ChefSelectedUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        name = transform.GetChild(3).gameObject;
-        ability_cook = transform.GetChild(4).gameObject;
+        selected_bk = transform.GetChild(0).gameObject;
+        selected_bk.SetActive(is_selecting);
+        add_bk = transform.GetChild(3).gameObject;
+        add_bk.SetActive(is_empty);
+
+        profile = transform.GetChild(4).gameObject;
+        profile.SetActive(!is_empty);
+
+        name = transform.GetChild(5).gameObject;
+        name.SetActive(!is_empty);
+
+        ability_cook = transform.GetChild(6).gameObject;
+        ability_cook.SetActive(!is_empty);
         fried = ability_cook.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
         grill = ability_cook.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>();
         bake = ability_cook.transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>();
@@ -31,7 +51,8 @@ public class ChefSelectedUI : MonoBehaviour
         steam = ability_cook.transform.GetChild(4).GetChild(0).GetComponent<TMP_Text>();
         prepare = ability_cook.transform.GetChild(5).GetChild(0).GetComponent<TMP_Text>();
 
-        ability_ingred = transform.GetChild(5).gameObject;
+        ability_ingred = transform.GetChild(7).gameObject;
+        ability_ingred.SetActive(!is_empty);
         ingred1 = ability_ingred.transform.GetChild(0).GetChild(0).gameObject;
         ingred2 = ability_ingred.transform.GetChild(0).GetChild(1).gameObject;
         ingred3 = ability_ingred.transform.GetChild(1).GetChild(0).gameObject;
@@ -49,6 +70,12 @@ public class ChefSelectedUI : MonoBehaviour
         steam.text = chef.steam.ToString();
         prepare.text = chef.prepare.ToString();
         SetIngred(chef.ability_ingred);
+
+        if (is_empty)
+        {
+            is_empty = false;
+            ShowChef();
+        }
     }
 
     private void SetIngred(List<string> ability_ingred)
@@ -106,5 +133,36 @@ public class ChefSelectedUI : MonoBehaviour
         else if(v.Contains("seaweed")) return ingred_icons[8];
         else if(v.Contains("coral")) return ingred_icons[9];
         else return ingred_icons[10];
+    }
+
+    
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        is_selecting = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if(!is_selected) is_selecting = false;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        chefSelected.SelectSpot(this.transform.gameObject);
+    }
+    
+    void Update()
+    {
+        selected_bk.SetActive(is_selecting);
+        
+    }
+
+    public void ShowChef()
+    {
+        profile.SetActive(!is_empty);
+        add_bk.SetActive(is_empty);
+        name.SetActive(!is_empty);
+        ability_cook.SetActive(!is_empty);
+        ability_ingred.SetActive(!is_empty);
     }
 }
