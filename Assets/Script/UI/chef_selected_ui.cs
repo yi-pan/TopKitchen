@@ -14,6 +14,8 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public bool is_empty;
 
+    public ChefUI last_selected;
+
     public ChefSelected chefSelected;
 
     public GameObject selected_bk;
@@ -77,6 +79,7 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             ShowChef();
         }
     }
+  
 
     private void SetIngred(List<string> ability_ingred)
     {

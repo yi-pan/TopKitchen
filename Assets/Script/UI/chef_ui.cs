@@ -44,20 +44,36 @@ public class ChefUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public void OnPointerClick(PointerEventData eventData)
     {
         //Debug.Log(name + " " + fried + " " + ability_ingred[0]);
-        chefSelect.SelectChef(this);
-        is_selected = true;
-        selected_black.SetActive(true);
+        if (!is_selected)
+        {
+            chefSelect.SelectChef(this);
+            is_selected = true;
+            selected_black.SetActive(true);
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(!is_selected) is_selecting = true;
+        if (!is_selected)
+        {
+            is_selecting = true;
+            chefSelect.ShowChef(this);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (!is_selected)
+        {
+            chefSelect.HideChef();
+        }
         is_selecting = false;
+        
     }
 
-    
+    public void Reset()
+    {
+        is_selected = false; 
+        selected_black.SetActive(false);
+    }
 }

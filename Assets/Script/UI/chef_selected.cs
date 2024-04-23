@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Scripting.APIUpdating;
 
 public class ChefSelected : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class ChefSelected : MonoBehaviour
     public List<ChefSelectedUI> chefsInOrder;
 
     public GameObject latest_selected_spot;
+
+    public bool is_full;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +43,64 @@ public class ChefSelected : MonoBehaviour
         shopping_chef.transform.gameObject.SetActive(!shopping_chef.is_locked);
     }
 
+    private void Update()
+    {
+        latest_selected_spot.GetComponent<ChefSelectedUI>().is_selecting = true;
+    }
     public void SelectChef(ChefUI chef)
+    {
+        if (latest_selected_spot)
+        {
+            if (latest_selected_spot.name.Equals("main")) selected_spot = main_chef;
+            if (latest_selected_spot.name.Equals("side")) selected_spot = side_chef;
+            if (latest_selected_spot.name.Equals("dessert")) selected_spot = dessert_chef;
+            if (latest_selected_spot.name.Equals("beverage")) selected_spot = beverage_chef;
+            if (latest_selected_spot.name.Equals("shopping")) selected_spot = shopping_chef;
+            if (selected_spot.last_selected != null)
+            {
+                selected_spot.last_selected.Reset();
+                //Debug.Log(selected_spot.last_selected.name);
+            }
+            selected_spot.last_selected = chef;
+            selected_spot.SetChef(chef);
+        }
+        if(!is_full) MoveToNextEmptySpot();
+        CheckFullList();
+    }
+    void MoveToNextEmptySpot()
+    {
+        selected_spot.is_selecting = false;
+        int index = 0;
+        foreach(var c in chefsInOrder)
+        {
+            if(c.last_selected == null & !c.is_locked)
+            {
+                //Debug.Log(c.gameObject.name);
+                if (c.gameObject.name.Equals("main")) latest_selected_spot = main_chef.gameObject;
+                if (c.gameObject.name.Equals("side")) latest_selected_spot = side_chef.gameObject;
+                if (c.gameObject.name.Equals("dessert")) latest_selected_spot = dessert_chef.gameObject;
+                if (c.gameObject.name.Equals("beverage")) latest_selected_spot = beverage_chef.gameObject;
+                if (c.gameObject.name.Equals("shopping")) latest_selected_spot = shopping_chef.gameObject;
+                break;
+            }
+        }
+    }
+    void CheckFullList()
+    {
+        int empty_count = 0;
+        foreach (var c in chefsInOrder)
+        {
+            if (c.last_selected == null & !c.is_locked)
+            {
+         
+                empty_count++;
+            }
+        }
+        Debug.Log(empty_count);
+        if (empty_count == 0) is_full = true;
+    }
+
+    public void ShowChef(ChefUI chef)
     {
         if (latest_selected_spot)
         {
@@ -50,20 +111,33 @@ public class ChefSelected : MonoBehaviour
             if (latest_selected_spot.name.Equals("shopping")) selected_spot = shopping_chef;
             selected_spot.SetChef(chef);
         }
-        
     }
 
+    public void HideChef()
+    {
+        if (latest_selected_spot)
+        {
+            if (latest_selected_spot.name.Equals("main")) selected_spot = main_chef;
+            if (latest_selected_spot.name.Equals("side")) selected_spot = side_chef;
+            if (latest_selected_spot.name.Equals("dessert")) selected_spot = dessert_chef;
+            if (latest_selected_spot.name.Equals("beverage")) selected_spot = beverage_chef;
+            if (latest_selected_spot.name.Equals("shopping")) selected_spot = shopping_chef;
+            if (selected_spot.last_selected != null) { 
+                selected_spot.SetChef(selected_spot.last_selected);
+            }
+            else
+            {
+                selected_spot.is_empty = true;
+                selected_spot.ShowChef();
+            }
+        }
+    }
     public void SelectSpot(GameObject spot)
     {
         ChefSelectedUI chef = spot.GetComponent<ChefSelectedUI>();
-        Debug.Log(spot.name + chef.name.GetComponent<TMP_Text>().text);
+        // Debug.Log(spot.name + chef.name.GetComponent<TMP_Text>().text);
         if (!chef.is_selected)
         {
-            //if (chef.is_empty)
-            //{
-            //    chef.is_empty = false;
-            //    chef.ShowChef();
-            //}
             chef.is_selected = true;
             if (latest_selected_spot != null)
             {

@@ -137,7 +137,7 @@ public class DishGroup : MonoBehaviour
             if (nextEmptyIndex <= 0 && d.dish_name == "")
             {
                 nextEmptyIndex = index;
-                Debug.Log(nextEmptyIndex);
+                //Debug.Log(nextEmptyIndex);
                 break;
             }
             index++;

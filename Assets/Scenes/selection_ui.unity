@@ -1111,7 +1111,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: btn_open
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8861565520927996083, guid: 301b9d83ca535ea42840312e5be4a3ea, type: 3}
+    - {fileID: 5184789218200011101, guid: 301b9d83ca535ea42840312e5be4a3ea, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -3135,7 +3137,8 @@ MonoBehaviour:
   - {fileID: 1080421714}
   - {fileID: 699961421}
   - {fileID: 596466191}
-  latest_selected_spot: {fileID: 0}
+  latest_selected_spot: {fileID: 465517073}
+  is_full: 0
 --- !u!1 &148506139
 GameObject:
   m_ObjectHideFlags: 0
@@ -5918,6 +5921,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306510080}
   m_CullTransparentMesh: 1
+--- !u!1 &306825001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 306825002}
+  - component: {fileID: 306825003}
+  m_Layer: 0
+  m_Name: DataCollector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &306825002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306825001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &306825003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306825001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af55e11a8d0a5d43a0abd06d7ae8e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected_chef_group: {fileID: 142217424}
+  selected_dish_group: {fileID: 880538837}
+  btn_shopping: {fileID: 1337696445}
 --- !u!224 &328127413 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3795756453785996000, guid: f6d50562ea853e34c850fd895b7e1a44,
@@ -7592,6 +7642,7 @@ MonoBehaviour:
   is_selecting: 0
   is_selected: 0
   is_empty: 1
+  last_selected: {fileID: 0}
   chefSelected: {fileID: 142217424}
   selected_bk: {fileID: 0}
   add_bk: {fileID: 0}
@@ -10638,6 +10689,7 @@ MonoBehaviour:
   is_selecting: 0
   is_selected: 0
   is_empty: 1
+  last_selected: {fileID: 0}
   chefSelected: {fileID: 142217424}
   selected_bk: {fileID: 0}
   add_bk: {fileID: 0}
@@ -12072,6 +12124,7 @@ MonoBehaviour:
   is_selecting: 0
   is_selected: 0
   is_empty: 1
+  last_selected: {fileID: 0}
   chefSelected: {fileID: 142217424}
   selected_bk: {fileID: 0}
   add_bk: {fileID: 0}
@@ -14874,6 +14927,8 @@ MonoBehaviour:
   dishesInOrder: []
   dish_selected: {fileID: 6703657512944691654}
   dish_next: {fileID: 0}
+  is_full: 0
+  nextEmptyIndex: -1
 --- !u!114 &880538838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17687,6 +17742,7 @@ MonoBehaviour:
   is_selecting: 0
   is_selected: 0
   is_empty: 1
+  last_selected: {fileID: 0}
   chefSelected: {fileID: 142217424}
   selected_bk: {fileID: 0}
   add_bk: {fileID: 0}
@@ -20227,7 +20283,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MAIN CHEF
+  m_text: SHOPPING
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -20848,6 +20904,7 @@ MonoBehaviour:
   is_selecting: 0
   is_selected: 0
   is_empty: 1
+  last_selected: {fileID: 0}
   chefSelected: {fileID: 142217424}
   selected_bk: {fileID: 0}
   add_bk: {fileID: 0}
@@ -21510,6 +21567,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336562316}
   m_CullTransparentMesh: 1
+--- !u!1 &1337696445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8860526998094760430, guid: 301b9d83ca535ea42840312e5be4a3ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 3119166249492706879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1342371098
 GameObject:
   m_ObjectHideFlags: 0
@@ -22335,6 +22398,98 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3119166249492706879}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1380995439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337696445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 0
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 306825003}
+        m_TargetAssemblyTypeName: data_collector, Assembly-CSharp
+        m_MethodName: CollectChefData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 306825003}
+        m_TargetAssemblyTypeName: data_collector, Assembly-CSharp
+        m_MethodName: CollectDishData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 783149067}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 222211800}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1394912072
 GameObject:
   m_ObjectHideFlags: 0
@@ -27485,7 +27640,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MAIN CHEF
+  m_text: DESSERT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -28453,7 +28608,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MAIN CHEF
+  m_text: BEVERAGE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -28662,7 +28817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MAIN CHEF
+  m_text: SIDE CHEF
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -35274,7 +35429,7 @@ PrefabInstance:
     - target: {fileID: 364793934262257235, guid: 301b9d83ca535ea42840312e5be4a3ea,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8328812315478173039, guid: 301b9d83ca535ea42840312e5be4a3ea,
         type: 3}
@@ -35379,12 +35534,18 @@ PrefabInstance:
     - target: {fileID: 8860526998094760430, guid: 301b9d83ca535ea42840312e5be4a3ea,
         type: 3}
       propertyPath: m_Name
-      value: btn_open
+      value: btn_shopping
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8861565520927996083, guid: 301b9d83ca535ea42840312e5be4a3ea, type: 3}
+    - {fileID: 5184789218200011101, guid: 301b9d83ca535ea42840312e5be4a3ea, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8860526998094760430, guid: 301b9d83ca535ea42840312e5be4a3ea,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1380995439}
   m_SourcePrefab: {fileID: 100100000, guid: 301b9d83ca535ea42840312e5be4a3ea, type: 3}
 --- !u!114 &3133294063668131167
 MonoBehaviour:
@@ -37357,3 +37518,4 @@ SceneRoots:
   - {fileID: 222211804}
   - {fileID: 1698499361}
   - {fileID: 1351319145}
+  - {fileID: 306825002}
