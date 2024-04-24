@@ -96,7 +96,7 @@ public class ChefSelected : MonoBehaviour
                 empty_count++;
             }
         }
-        Debug.Log(empty_count);
+        //Debug.Log(empty_count);
         if (empty_count == 0) is_full = true;
     }
 

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ChefUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public ChefSelected chefSelect;
-    public string name;
+    public string chef_name;
     public int fried, grill, boil, steam, bake, prepare;
     public List<string> ability_ingred = new List<string>();
 
@@ -24,7 +24,7 @@ public class ChefUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     {
         profile = transform.GetChild(0).gameObject;
         name_text = transform.GetChild(1).GetComponent<TMP_Text>();
-        name_text.text = name;
+        name_text.text = chef_name;
         selected_black = transform.GetChild(2).gameObject;
         selected_black.SetActive(false);
     }
@@ -75,5 +75,17 @@ public class ChefUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     {
         is_selected = false; 
         selected_black.SetActive(false);
+    }
+
+    public void printChefDetail()
+    {
+        string ability_cook_string, ability_ingred_string;
+        ability_cook_string = "fried:" + fried + "grill:" + grill + "boil:" + boil + "steam:" + steam + "bake:" + bake + "prepare:" + prepare;
+        ability_ingred_string = "";
+        foreach(var ingred in ability_ingred)
+        {
+            ability_ingred_string += ingred.ToString();
+        }
+        Debug.Log(chef_name + " " + ability_cook_string + " " + ability_ingred_string);
     }
 }
