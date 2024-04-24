@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3624181294317925730}
   - component: {fileID: 223609585819735375}
   - component: {fileID: 7864215550363517407}
+  - component: {fileID: -656712409528492836}
   m_Layer: 0
   m_Name: fried egg
   m_TagString: Dish
@@ -61,6 +62,7 @@ MonoBehaviour:
   - fried
   uncooked: {fileID: 2800000, guid: 8d6d759eeda6b4efab3fe86d54dbbec7, type: 3}
   cooked: {fileID: 2800000, guid: 1f393ad9fb7194c428c6fb90c24057eb, type: 3}
+  cooked_status: 0
   thisImage: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}
 --- !u!222 &3624181294317925730
@@ -91,7 +93,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: d75a31f67f11444f7ac6ac60e3c6a18a, type: 3}
+  m_Texture: {fileID: 2800000, guid: 8d6d759eeda6b4efab3fe86d54dbbec7, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -110,3 +112,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c54b43baabf804b38a15ea869b1f8ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &-656712409528492836
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2170765661195981156}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

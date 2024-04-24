@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Dish : MonoBehaviour, IDragHandler
+public class Dish : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     public string type;
     public float hardness;
@@ -14,6 +14,7 @@ public class Dish : MonoBehaviour, IDragHandler
     public string[] cookingList;
     public Texture uncooked;
     public Texture cooked;
+    public bool cooked_status;
 
     //drag and drop ui
     public RawImage thisImage;
@@ -23,6 +24,7 @@ public class Dish : MonoBehaviour, IDragHandler
     {
         thisImage = GetComponent<RawImage>();
         startPosition = transform.position;
+        cooked_status = false;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -33,12 +35,35 @@ public class Dish : MonoBehaviour, IDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = eventData.position;
+        //Debug.Log("dragging");
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        //Debug.Log("end drag");
         transform.position = startPosition;
         thisImage.raycastTarget = true;
     }
 
+    private void Update()
+    {
+        if (cooked_status)
+        {
+            gameObject.GetComponent<RawImage>().texture = cooked;
+        }
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        //Debug.Log("collide");
+        if (eventData.pointerDrag.transform.tag == "Dish_bg")
+        {
+            Dish draggable = eventData.pointerDrag.GetComponent<Dish>();
+            if (draggable != null)
+            {
+                //Debug.Log("collide");
+                draggable.startPosition = transform.position;
+            }
+        }
+    }
 }
