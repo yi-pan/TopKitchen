@@ -10,7 +10,7 @@ public class DishAllGroup : MonoBehaviour
     public DishDetail dish_detail;
     public DishAll dish_selected;
     public DishGroup dishes_today;
-    
+
     public void Subscribe(DishAll dish)
     {
         if (dishes == null) dishes = new List<DishAll>();

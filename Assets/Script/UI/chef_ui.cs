@@ -77,15 +77,17 @@ public class ChefUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         selected_black.SetActive(false);
     }
 
-    public void printChefDetail()
+    public string printChefDetail()
     {
         string ability_cook_string, ability_ingred_string;
-        ability_cook_string = "fried:" + fried + "grill:" + grill + "boil:" + boil + "steam:" + steam + "bake:" + bake + "prepare:" + prepare;
+        ability_cook_string = fried + " " + grill + " " + boil + " " + steam + " " + bake + " " + prepare;
         ability_ingred_string = "";
         foreach(var ingred in ability_ingred)
         {
-            ability_ingred_string += ingred.ToString();
+            ability_ingred_string += ingred.ToString() + " ";
         }
-        Debug.Log(chef_name + " " + ability_cook_string + " " + ability_ingred_string);
+        //Debug.Log(chef_name + "; " + ability_cook_string + "; " + ability_ingred_string);
+        string detail = chef_name + "; " + ability_cook_string + "; " + ability_ingred_string;
+        return detail;
     }
 }
