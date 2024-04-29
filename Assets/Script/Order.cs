@@ -10,24 +10,28 @@ public class Order : MonoBehaviour
     public GameObject[] dessert;
     public GameObject[] drink;
 
-    public Vector3 mainPos;
-    public Vector3 sidePos;
-    public Vector3 dessertPos;
-    public Vector3 drinkPos;
+    public GameObject mainPos;
+    public GameObject sidePos;
+    public GameObject dessertPos;
+    public GameObject drinkPos;
 
     // Start is called before the first frame update
     void Start()
     {
         int main_i = Random.Range(0, main.Length);
         int side_i = Random.Range(0, side.Length);
-        GameObject main_dish = Instantiate(main[main_i], this.transform);
-        main_dish.transform.localPosition = mainPos;
-        GameObject side_dish = Instantiate(side[side_i], this.transform);
-        side_dish.transform.localPosition = sidePos;
-        GameObject dessert_dish = Instantiate(dessert[0], this.transform);
-        dessert_dish.transform.localPosition = dessertPos;
-        GameObject drink_dish = Instantiate(drink[0], this.transform);
-        drink_dish.transform.localPosition = drinkPos;
+        GameObject main_dish = Instantiate(main[main_i], mainPos.transform);
+        main_dish.name = main[main_i].name;
+        //main_dish.transform.position = mainPos.transform.position;
+        GameObject side_dish = Instantiate(side[side_i], sidePos.transform);
+        side_dish.name = side[side_i].name;
+        //side_dish.transform.position = sidePos.transform.position;
+        GameObject dessert_dish = Instantiate(dessert[0], dessertPos.transform);
+        dessert_dish.name = dessert[0].name;
+        //dessert_dish.transform.position = dessertPos.transform.position;
+        GameObject drink_dish = Instantiate(drink[0], drinkPos.transform);
+        drink_dish.name = drink[0].name;
+        //drink_dish.transform.position = drinkPos.transform.position;
     }
 
     // Update is called once per frame

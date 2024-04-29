@@ -6,11 +6,12 @@ using TMPro;
 public class test_uiFollow : MonoBehaviour
 {
     public GameObject following;
+    private string start;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        start = GetComponent<TextMeshPro>().text;
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class test_uiFollow : MonoBehaviour
             //gameObject.GetComponent<TextMeshPro>().color = new Color(255, 0, 0, following.GetComponent<CookTable>().workload.Remap();
         } else
         {
-            gameObject.GetComponent<TextMeshPro>().text = "";
+            gameObject.GetComponent<TextMeshPro>().text = start;
         }
     }
 }

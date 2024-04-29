@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -15,11 +17,16 @@ public class DishDrop : MonoBehaviour, IDropHandler
             if (draggable != null)
             {
                 //Debug.Log("collide");
-                draggable.startPosition = transform.position;
-                if (this.gameObject.tag == "Table")
+                if (this.gameObject.tag == "Table" && cookTable.GetComponent<CookTable>().dishes.Contains(draggable.gameObject.name))
                 {
-                    cookTable.GetComponent<CookTable>().currentDish = eventData.pointerDrag.gameObject;
-                } 
+                        draggable.startPosition = transform.position;
+                        cookTable.GetComponent<CookTable>().currentDish = eventData.pointerDrag.gameObject;
+                } else if (this.gameObject.tag == "Slot")
+                {
+                    draggable.startPosition = transform.position;
+                }
+                
+                
             }
         }
     }

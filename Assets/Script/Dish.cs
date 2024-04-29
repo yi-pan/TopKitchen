@@ -12,17 +12,16 @@ public class Dish : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
     public float avg_price;
     public string[] materialList;
     public string[] cookingList;
-    public Texture uncooked;
-    public Texture cooked;
+    public Sprite cooked;
     public bool cooked_status;
 
     //drag and drop ui
-    public RawImage thisImage;
+    Image thisImage;
     public Vector3 startPosition;
 
     private void Start()
     {
-        thisImage = GetComponent<RawImage>();
+        thisImage = GetComponent<Image>();
         startPosition = transform.position;
         cooked_status = false;
     }
@@ -49,7 +48,7 @@ public class Dish : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
     {
         if (cooked_status)
         {
-            gameObject.GetComponent<RawImage>().texture = cooked;
+            gameObject.GetComponent<Image>().sprite = cooked;
         }
     }
 

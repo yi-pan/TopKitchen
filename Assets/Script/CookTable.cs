@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CookTable : MonoBehaviour
 {
     float timer = 0.0f;
     public int gameSeconds;
     //dish info
-    public GameObject[] dishes;
+    public string[] dishes;
     public GameObject currentDish;
     private string[] materials;
     private string[] cookings;
@@ -21,7 +22,7 @@ public class CookTable : MonoBehaviour
     public float workPerSecond = 0.0f;
 
     //loading info
-    public Animator loadingBar;
+    public Slider loadingBar;
 
     // Start is called before the first frame update
     void Start()
@@ -108,7 +109,7 @@ public class CookTable : MonoBehaviour
             timer = 0.0f;
             gameSeconds += 1;
             workload -= workPerSecond;
-            loadingBar.SetFloat("LoadingTime", (overallWork - workload) / overallWork);
+            loadingBar.value = (overallWork - workload) / overallWork;
             if (workload <= 0)
             {
                 workPerSecond = 0;
@@ -116,6 +117,7 @@ public class CookTable : MonoBehaviour
                 canChange = true;
                 currentDish.GetComponent<Dish>().cooked_status = true;
                 currentDish = null;
+                loadingBar.value = 0;
             }
         }
 
