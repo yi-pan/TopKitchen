@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShoppingManager : MonoBehaviour
 {
-    public data_collector collected_data;
+    public DataCollector collected_data;
 
     public IngredListShop ingred_list;
 

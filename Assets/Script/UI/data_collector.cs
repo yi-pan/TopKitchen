@@ -6,7 +6,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class data_collector : MonoBehaviour
+public class DataCollector : MonoBehaviour
 {
     //[SerializeField] private TextAsset _collected_data_file;
 
