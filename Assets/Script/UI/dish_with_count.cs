@@ -7,12 +7,14 @@ using UnityEngine.UI;
 
 public class DishwCount : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 {
+    public dish_list_shop dish_list;
+    public IngredListShop shopped_ingred_list;
+
     private GameObject dish_layer; // under dish layer, we have select_layer and dish_image_layer
     private GameObject count_layer; // under count_layer, we have count_bk, minus, add(plus), and count
 
-
     // set the dish name and dish image first
-    private string dish_name;
+    public string dish_name;
     private GameObject dish_image_layer;
 
 
@@ -28,14 +30,16 @@ public class DishwCount : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     // set input field layer
     private GameObject input_field;
 
-    // Start is called before the first frame update
+    // ingredient list of this dish
+    public List<IngredientUI> ingredients;
+
     void Start()
     {
         dish_layer = transform.GetChild(0).gameObject;
         count_layer = transform.GetChild(1).gameObject;
 
         // we should have the previous day's dish_count copied                 X-X-X-X-X-X-X-X-X-X-X
-        dish_count = 2;
+        dish_count = 0;
         select_layer = dish_layer.transform.GetChild(0).gameObject;
         is_selecting = false;
         select_layer.SetActive(false);
@@ -48,42 +52,130 @@ public class DishwCount : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         input_field.GetComponent<TMP_InputField>().text = dish_count.ToString();
     }
 
-    public void OnValueChanged()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        dish_count = int.Parse(input_field.GetComponent<TMP_InputField>().text.Trim());
-        Debug.Log(dish_name + ": " + dish_count);
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        string clicked_object_name = eventData.pointerCurrentRaycast.gameObject.name;
-
-        // dish is selected, this is when we change the dish detail page in the middle
-        if (clicked_object_name.Equals("dish"))
+        if (!is_selecting)
         {
+            // select this 
             is_selecting = !is_selecting;
             select_layer.SetActive(is_selecting);
+            // unselect last_selected
+            if (dish_list.last_selected)
+            {
+                dish_list.last_selected.is_selecting = false;
+                dish_list.last_selected.select_layer.SetActive(false);
+            }
+            dish_list.last_selected = this;
+
             // change the dish detail
+            dish_list.ChangeDishDetail(dish_name);
+
+            // highlight the ingredients on the left side
+            List<string> ingred_list = new List<string>();
+            foreach(IngredientUI ingred in ingredients)
+            {
+                ingred_list.Add(ingred.ingred_name);
+            }
+            shopped_ingred_list.HighlightIngred(ingred_list);
         }
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    // input field value changed
+    public void OnValueChanged()
     {
-        // dish is selected, this is when we change the dish detail page in the middle
-        is_selecting = !is_selecting;
-        select_layer.SetActive(is_selecting);
+        // input_count is the different between input field num and current dish_count
+        int input_count = int.Parse(input_field.GetComponent<TMP_InputField>().text.Trim()) - dish_count;
+        int final_count = input_count;
+        // check each ingredient of this dish, and get the feasible count
+        foreach (IngredientUI ingred in ingredients)
+        {
+            int feasible_count = shopped_ingred_list.CheckIngredCount(ingred.ingred_name, input_count, ingred.count);
+            if (feasible_count < final_count) { final_count = feasible_count; }
+        }
 
+        // if final count > 0, it means we can change the dish count
+        if (final_count != 0)
+        {
+            // update dish_count
+            dish_count += final_count;
+            
+            // update left side
+            foreach (IngredientUI ingred in ingredients)
+            {
+                shopped_ingred_list.UpdateIngredCount(ingred.ingred_name, final_count, ingred.count);
+            }
+        }
+
+        // update input field text
+        input_field.GetComponent<TMP_InputField>().text = dish_count.ToString();
+
+        // check if there are dishes selected
+        dish_list.CheckAllCount();
     }
 
     public void Plus()
     {
-        dish_count++;
-        input_field.GetComponent<TMP_InputField>().text = dish_count.ToString();
+        int input_count = 1;
+        int final_count = input_count;
+        // check each ingredient of this dish, and get the feasible count
+        foreach (IngredientUI ingred in ingredients)
+        {
+            int feasible_count = shopped_ingred_list.CheckIngredCount(ingred.ingred_name, input_count, ingred.count);
+            if(feasible_count < final_count) { final_count = feasible_count; }
+        }
+        // if final count > 0, it means we have enough ingredients to add one dish
+        if(final_count > 0)
+        {
+            // update right side
+            dish_count++;
+            input_field.GetComponent<TMP_InputField>().text = dish_count.ToString();
+            // update left side
+            foreach(IngredientUI ingred in ingredients)
+            {
+                shopped_ingred_list.UpdateIngredCount(ingred.ingred_name, final_count, ingred.count);
+            }
+        }
+        // check if there are dishes selected
+        dish_list.CheckAllCount();
     }
 
     public void Minus()
     {
-        if (dish_count > 0) dish_count--;
-        input_field.GetComponent<TMP_InputField>().text = dish_count.ToString();
+        if (dish_count > 0)
+        {
+            dish_count--;
+            input_field.GetComponent<TMP_InputField>().text = dish_count.ToString();
+            // update left side
+            foreach (IngredientUI ingred in ingredients)
+            {
+                shopped_ingred_list.UpdateIngredCount(ingred.ingred_name, -1, ingred.count);
+            }
+        }
+        // check if there are dishes selected
+        dish_list.CheckAllCount();
+    }
+
+
+
+    // on click 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        //string clicked_object_name = eventData.pointerCurrentRaycast.gameObject.name;
+        //if (!is_selecting)
+        //{
+        //    // select this 
+        //    is_selecting = !is_selecting;
+        //    select_layer.SetActive(is_selecting);
+        //    // unselect last_selected
+        //    if (dish_list.last_selected)
+        //    {
+        //        dish_list.last_selected.is_selecting = false;
+        //        dish_list.last_selected.select_layer.SetActive(false);
+        //    }
+        //    dish_list.last_selected = this;
+
+        //    // change the dish detail
+        //    dish_list.ChangeDishDetail(dish_name);
+        //}
     }
 }

@@ -19,7 +19,7 @@ public class DishListUI : MonoBehaviour
         {
             var variables = new List<string>(line.Split("; "));
             DishUI dish = gameObject.AddComponent<DishUI>();
-            dish.name = variables[0];
+            dish.dish_name = variables[0];
             dish.type = variables[1];
             dish.level = float.Parse(variables[2]);
             dish.hardness = float.Parse(variables[3]);
@@ -29,11 +29,11 @@ public class DishListUI : MonoBehaviour
 
             foreach (var i in tmp_ingred)
             {
-                IngredientUI ingred = gameObject.AddComponent<IngredientUI>();
+                IngredientUI ingred = new();
                 var word = new List<string>(i.Split(" "));
-                ingred.name = word[0];
+                ingred.ingred_name = word[0];
                 ingred.type = word[1];
-                ingred.count = float.Parse(word[2]);
+                ingred.count = int.Parse(word[2]);
                 if (dish.ingredientList == null) dish.ingredientList = new List<IngredientUI>();
                 dish.ingredientList.Add(ingred);
             }
@@ -48,7 +48,7 @@ public class DishListUI : MonoBehaviour
     {
         foreach (var dish in dishList)
         {
-            if (dish.name == name) return dish;
+            if (dish.dish_name == name) return dish;
         }
         return null;
     }
@@ -58,10 +58,10 @@ public class DishListUI : MonoBehaviour
         Debug.Log(dishList.Count);
         foreach (var dish in dishList)
         {
-            Debug.Log(dish.name + " " + dish.type + " " + dish.level + " " + dish.hardness + " " + dish.workload + " " + dish.avg_price);
+            Debug.Log(dish.dish_name + " " + dish.type + " " + dish.level + " " + dish.hardness + " " + dish.workload + " " + dish.avg_price);
             foreach(var ingred in dish.ingredientList)
             {
-                Debug.Log(ingred.name + " " + ingred.type + " " + ingred.count);
+                Debug.Log(ingred.ingred_name + " " + ingred.type + " " + ingred.count);
             }
             foreach(var method in dish.cookingList)
             {

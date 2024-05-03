@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DishUI : MonoBehaviour
 {
-    public string name;
+    public string dish_name;
     public string type;
     public float level;
     public float hardness;

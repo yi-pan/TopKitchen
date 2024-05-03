@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IngredientUI : MonoBehaviour
+public class IngredientUI : Object
 {
-    public string name;
+    public string ingred_name;
     public string type;
-    public float count;
+    public int count;
+    public int total_count;
 }

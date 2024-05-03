@@ -20,7 +20,7 @@ public class DishDetail : MonoBehaviour
     [SerializeField] Sprite[] dishSprite;
     private Sprite img;
 
-    public DishAll first_dish;
+    public string first_dish;
 
     void Start()
     {
@@ -42,7 +42,7 @@ public class DishDetail : MonoBehaviour
         steam = dish_cookingList.transform.GetChild(4).gameObject;
         prepare = dish_cookingList.transform.GetChild(5).gameObject;
 
-        SetDishDetail(first_dish.dish_name);
+        SetDishDetail(first_dish);
     }
     public void SetDishDetail(string name)
     {
