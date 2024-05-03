@@ -27,16 +27,21 @@ public class dish_list_shop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         selected_dishes = dataCollector.selected_dishes;
         // set up each dish group
         foreach (DishUI dish in selected_dishes)
         {
             // Debug.Log(dish.name + " " + dish.type);
-            if (dish.type.Equals("main")) main_dishes.Add(dish);
+            if (dish.type.Equals("main")) { main_dishes.Add(dish); }
             else if (dish.type.Equals("side")) side_dishes.Add(dish);
             else if (dish.type.Equals("dessert")) desserts.Add(dish);
             else beverages.Add(dish);
         }
+        // set fish detail first_dish string
+        selected_dish_detail.GetComponent<DishDetail>().first_dish = main_dishes[0].dish_name;
+        
+
         // set up dish group
         main_dish_group = transform.GetChild(0).gameObject;
         side_dish_group = transform.GetChild(1).gameObject;
@@ -52,8 +57,9 @@ public class dish_list_shop : MonoBehaviour
         ShowDishes(side_dish_group, side_dishes);
         ShowDishes(desserts_group, desserts);
         ShowDishes(beverages_group, beverages);
-        // set fish detail first_dish string
-        selected_dish_detail.GetComponent<DishDetail>().first_dish = main_dishes[0].dish_name;
+
+        
+        // selected_dish_detail.GetComponent<DishDetail>().SetDishDetail(main_dishes[0].name);
 
         //Debug.Log("dish with count list count: " + dish_w_count_list.Count);
     }
