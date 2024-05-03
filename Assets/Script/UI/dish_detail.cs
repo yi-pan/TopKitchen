@@ -10,7 +10,7 @@ public class DishDetail : MonoBehaviour
 {
     public DishListUI dishList;
     [SerializeField] Sprite[] ingred_type_sprite;
-    private DishUI dish;
+    public DishUI dish;
 
     public GameObject dish_layer, price_time, ingredients, dish_level, dish_cookingList;
 
@@ -20,7 +20,7 @@ public class DishDetail : MonoBehaviour
     [SerializeField] Sprite[] dishSprite;
     private Sprite img;
 
-    public DishAll first_dish;
+    public string first_dish;
 
     void Start()
     {
@@ -41,8 +41,8 @@ public class DishDetail : MonoBehaviour
         boil = dish_cookingList.transform.GetChild(3).gameObject;
         steam = dish_cookingList.transform.GetChild(4).gameObject;
         prepare = dish_cookingList.transform.GetChild(5).gameObject;
-
-        SetDishDetail(first_dish.dish_name);
+        Debug.Log(first_dish);
+        SetDishDetail(first_dish);
     }
     public void SetDishDetail(string name)
     {

@@ -70,7 +70,6 @@ public class ChefSelected : MonoBehaviour
     void MoveToNextEmptySpot()
     {
         selected_spot.is_selecting = false;
-        int index = 0;
         foreach(var c in chefsInOrder)
         {
             if(c.last_selected == null & !c.is_locked)

@@ -21,7 +21,7 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public GameObject selected_bk;
     public GameObject add_bk;
     public GameObject profile;
-    public GameObject name;
+    public GameObject chef_name;
     public GameObject ability_cook;
     public TMP_Text fried, grill, bake, boil, steam, prepare;
 
@@ -41,8 +41,8 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         profile = transform.GetChild(4).gameObject;
         profile.SetActive(!is_empty);
 
-        name = transform.GetChild(5).gameObject;
-        name.SetActive(!is_empty);
+        chef_name = transform.GetChild(5).gameObject;
+        chef_name.SetActive(!is_empty);
 
         ability_cook = transform.GetChild(6).gameObject;
         ability_cook.SetActive(!is_empty);
@@ -63,7 +63,7 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void SetChef(ChefUI chef)
     {
-        name.GetComponent<TMP_Text>().text = chef.name;
+        chef_name.GetComponent<TMP_Text>().text = chef.name;
 
         fried.text = chef.fried.ToString();
         grill.text = chef.grill.ToString();
@@ -164,7 +164,7 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         profile.SetActive(!is_empty);
         add_bk.SetActive(is_empty);
-        name.SetActive(!is_empty);
+        chef_name.SetActive(!is_empty);
         ability_cook.SetActive(!is_empty);
         ability_ingred.SetActive(!is_empty);
     }

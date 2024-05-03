@@ -116,7 +116,7 @@ public class DishGroup : MonoBehaviour
                 dish_selected.is_selecting = false;
                 
                 // click on selected ones we unselect the dish
-                Debug.Log(dish.dish_name);
+                // Debug.Log(dish.dish_name);
             }
             dish_selected = dish;
             dish.layer_bk.SetActive(dish.is_selected);
