@@ -10,6 +10,7 @@ public class DishDetail : MonoBehaviour
 {
     public DishListUI dishList;
     [SerializeField] Sprite[] ingred_type_sprite;
+    [SerializeField] Sprite[] ingred_sprite;
     public DishUI dish;
 
     public GameObject dish_layer, price_time, ingredients, dish_level, dish_cookingList;
@@ -84,9 +85,17 @@ public class DishDetail : MonoBehaviour
         {
             GameObject ingred = ingredients.transform.GetChild(i).gameObject;
             ingred.SetActive(true);
-            Image dish_img = ingred.transform.GetChild(1).GetComponent<Image>();
-            // set up dish image
-
+            // set up ingred image
+            Image ingred_img = ingred.transform.GetChild(1).GetComponent<Image>();
+            if (ingredientList[i].ingred_name.Equals("small_fish")) ingred_img.sprite = ingred_sprite[0];
+            else if (ingredientList[i].ingred_name.Equals("duduclam")) ingred_img.sprite = ingred_sprite[1];
+            else if (ingredientList[i].ingred_name.Equals("deeproot")) ingred_img.sprite = ingred_sprite[2];
+            else if (ingredientList[i].ingred_name.Equals("jelly_seaweed")) ingred_img.sprite = ingred_sprite[3];
+            else if (ingredientList[i].ingred_name.Equals("dark_berry")) ingred_img.sprite = ingred_sprite[4];
+            else if (ingredientList[i].ingred_name.Equals("canned_radiance_milk")) ingred_img.sprite = ingred_sprite[5];
+            else if (ingredientList[i].ingred_name.Equals("lumin_egg")) ingred_img.sprite = ingred_sprite[6];
+            else if (ingredientList[i].ingred_name.Equals("pink_coral_sugar")) ingred_img.sprite = ingred_sprite[7];
+            else ingred_img.sprite = ingred_sprite[0];
 
             // set up type icon
             Image type_img = ingred.transform.GetChild(2).GetComponent<Image>();

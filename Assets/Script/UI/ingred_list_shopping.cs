@@ -9,7 +9,7 @@ public class IngredListShop : MonoBehaviour
     public List<GameObject> ingredList;
 
     public List<IngredientUI> shopped_ingred_list;
-
+    public List<Sprite> ingred_sprite;
     // set ingredients list on the left of the screen
     public void CreateList(List<IngredientUI> shopped_ingred)
     {
@@ -43,6 +43,16 @@ public class IngredListShop : MonoBehaviour
         for(int i = 0; i<shopped_ingred.Count; i++)
         {
             Image ingred_img = ingredList[i].transform.GetChild(0).GetComponent<Image>();
+            if (shopped_ingred_list[i].ingred_name.Equals("small_fish")) ingred_img.sprite = ingred_sprite[0];
+            else if (shopped_ingred_list[i].ingred_name.Equals("duduclam")) ingred_img.sprite = ingred_sprite[1];
+            else if (shopped_ingred_list[i].ingred_name.Equals("deeproot")) ingred_img.sprite = ingred_sprite[2];
+            else if (shopped_ingred_list[i].ingred_name.Equals("jelly_seaweed")) ingred_img.sprite = ingred_sprite[3];
+            else if (shopped_ingred_list[i].ingred_name.Equals("dark_berry")) ingred_img.sprite = ingred_sprite[4];
+            else if (shopped_ingred_list[i].ingred_name.Equals("canned_radiance_milk")) ingred_img.sprite = ingred_sprite[5];
+            else if (shopped_ingred_list[i].ingred_name.Equals("lumin_egg")) ingred_img.sprite = ingred_sprite[6];
+            else if (shopped_ingred_list[i].ingred_name.Equals("pink_coral_sugar")) ingred_img.sprite = ingred_sprite[7];
+            else ingred_img.sprite = ingred_sprite[0];
+
             TMP_Text ingred_name = ingredList[i].transform.GetChild(1).GetComponent<TMP_Text>();
             TMP_Text ingred_count = ingredList[i].transform.GetChild(2).GetComponent<TMP_Text>();
             ingred_name.text = shopped_ingred[i].ingred_name.Replace("_", " ");
@@ -91,7 +101,7 @@ public class IngredListShop : MonoBehaviour
         }
         return input_count; // if the input count is feasible, return the input count
     }
-
+    
 
     public void HighlightIngred(List<string> ingred_name)
     {

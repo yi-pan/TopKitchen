@@ -9,13 +9,13 @@ Dish:
 dudu_soup; main; 1; 1; 100; 90; small_fish fish 2, duduclam shell 10; boil
 omurice; main; 1; 1; 150; 150; lumin_egg egg 4, deeproot root 2; steam fried
 sashimi; side; 0; 1; 70; 18; small_fish fish 1; prepare
-seaweed_jelly; dessert; 0; 0.8; 50; 85; jelly_seaweed seaweed 2, canned_radience_milk milk 1, pink_coral_sugar coral 1; prepare boil
+seaweed_jelly; dessert; 0; 0.8; 50; 85; jelly_seaweed seaweed 2, canned_radiance_milk milk 1, pink_coral_sugar coral 1; prepare boil
 berry_juice; beverage; 0; 0.8; 40; 45; dark_berry fruit 2, pink_coral_sugar coral 1; prepare
 
 Dish Count:
-dudu_soup 3
+dudu_soup 0
 omurice 0
 sashimi 0
-seaweed_jelly 0
-berry_juice 0
+seaweed_jelly 3
+berry_juice 3
 
