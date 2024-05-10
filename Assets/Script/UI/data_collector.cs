@@ -109,7 +109,7 @@ public class DataCollector : MonoBehaviour
 
     public string PrintDishDetails()
     {
-        string detail = "\nDish:\n";
+        string detail = "\n---\nDish:\n";
         foreach (DishUI dish in selected_dishes)
         {
             string ingred_string = "";
@@ -133,7 +133,7 @@ public class DataCollector : MonoBehaviour
     public void CollectDishCount()
     {
         sw = new StreamWriter(path, true);
-        string dish_count = "Dish Count:\n";
+        string dish_count = "---\nDish Count:\n";
         foreach(DishwCount dish in dish_w_count_list)
         {
             dish_count += dish.dish_name + " " + dish.dish_count + "\n";

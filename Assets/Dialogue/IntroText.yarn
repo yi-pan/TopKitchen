@@ -1,4 +1,18 @@
 ﻿title: Start
+---
+News: Capital Scandal - Royal Party Turns into Impact Scene, Forbidden Ingredients from Downtown Appear in the Capital. Five-Star Chef Penalized.
+News: The class conflict intensifies, crystal mines are attacked, and the number of guards at the passageways increases.
+News: The whale season is approaching, but will the class division disrupt this peak tourism season?
+Main: The royal party turning into an impact event? Yes, I am the 'behind-the-scenes mastermind' of this farce. Two months ago, I was forced to leave the capital and return to this dilapidated place.
+Main: *stands up and looks at the dilapidated panorama of the restaurant* I swear I will reclaim everything that's mine.
+===
+
+title: Unity
+---
+Narrator: Someone read the Beginner's Guide!
+===
+
+title: Choice
 tags:
 ---
 Narrator: Oh, hello!
@@ -10,12 +24,3 @@ Narrator: Oh, hello!
             <<jump Unity>>
 ===
 
-title: Oh
----
-Narrator: Yeah, fun, right?
-===
-
-title: Unity
----
-Narrator: Someone read the Beginner's Guide!
-===
