@@ -1709,8 +1709,9 @@ MonoBehaviour:
   - {fileID: 5743416387315957086, guid: d341492527943cd47a6719f857ff72ee, type: 3}
   - {fileID: 6062830049230510236, guid: 1b4900af2a3cbcb4eaf8be642c8ab950, type: 3}
   - {fileID: 271733183524720790, guid: 39bc7b2488e26384c991978100c6efae, type: 3}
-  ui: {fileID: 0}
-  orderPrefab: {fileID: 0}
+  ui: {fileID: 1408308323}
+  orderPrefab: {fileID: 7883298835320906451, guid: aa36656e3b00d0344816679ac009f00c,
+    type: 3}
 --- !u!1 &473274943
 GameObject:
   m_ObjectHideFlags: 0

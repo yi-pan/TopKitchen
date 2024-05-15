@@ -95,8 +95,12 @@ public class GameManager : MonoBehaviour
         }
 
         //test: spawn the first order, TODO:edit to be inside update
-        GameObject order = Instantiate(orderPrefab, ui.transform);
-        
+        GameObject order = (GameObject)Instantiate(orderPrefab, ui.transform);
+        order.GetComponent<Order>().main = mainDish[0];
+        order.GetComponent<Order>().side = sideDish[0];
+        order.GetComponent<Order>().dessert = dessertDish[0];
+        order.GetComponent<Order>().drink = beverageDish[0];
+    
     }
 
     void populateArray(string[] names, GameObject[] list) {
