@@ -30,6 +30,8 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public Sprite[] ingred_icons;
 
+    public ChefUI selectedChef;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +65,7 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void SetChef(ChefUI chef)
     {
+        
         chef_name.GetComponent<TMP_Text>().text = chef.name;
 
         fried.text = chef.fried.ToString();
@@ -151,7 +154,18 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        chefSelected.SelectSpot(this.transform.gameObject);
+        if (is_selected)
+        {
+            is_selected = false;
+            last_selected.is_selected = false;
+            last_selected.selected_black.SetActive(false);
+            is_empty = true;
+            ShowChef();
+        }
+        else
+        {
+            chefSelected.SelectSpot(this.transform.gameObject);
+        }
     }
     
     void Update()
@@ -168,4 +182,6 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         ability_cook.SetActive(!is_empty);
         ability_ingred.SetActive(!is_empty);
     }
+
+    
 }

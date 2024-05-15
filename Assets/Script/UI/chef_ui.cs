@@ -12,7 +12,7 @@ public class ChefUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public int fried, grill, boil, steam, bake, prepare;
     public List<string> ability_ingred = new List<string>();
 
-    private GameObject selected_black;
+    public GameObject selected_black;
     private GameObject profile;
     private TMP_Text name_text;
 
@@ -27,6 +27,7 @@ public class ChefUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         name_text.text = chef_name;
         selected_black = transform.GetChild(2).gameObject;
         selected_black.SetActive(false);
+        if(is_locked) transform.gameObject.SetActive(false);
     }
 
     void Update()

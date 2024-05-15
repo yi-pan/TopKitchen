@@ -815,7 +815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dishGroup: {fileID: 880538837}
-  is_locked: 0
+  is_locked: 1
   is_selected: 0
   is_selecting: 0
   layer_add: {fileID: 0}
@@ -13557,7 +13557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dishGroup: {fileID: 880538837}
-  is_locked: 0
+  is_locked: 1
   is_selected: 0
   is_selecting: 0
   layer_add: {fileID: 0}
@@ -14846,7 +14846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ca223f155691f44969829211d1f1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  is_locked: 0
+  is_locked: 1
   is_selecting: 0
   is_selected: 0
   is_empty: 1
@@ -23756,7 +23756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ca223f155691f44969829211d1f1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  is_locked: 0
+  is_locked: 1
   is_selecting: 0
   is_selected: 0
   is_empty: 1
@@ -32357,7 +32357,7 @@ MonoBehaviour:
   ability_ingred: []
   is_selecting: 0
   is_selected: 0
-  is_locked: 0
+  is_locked: 1
 --- !u!1 &1533358470
 GameObject:
   m_ObjectHideFlags: 0
@@ -44015,7 +44015,7 @@ MonoBehaviour:
   ability_ingred: []
   is_selecting: 0
   is_selected: 0
-  is_locked: 0
+  is_locked: 1
 --- !u!1 &1942204840
 GameObject:
   m_ObjectHideFlags: 0
@@ -47675,7 +47675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dishGroup: {fileID: 880538837}
-  is_locked: 0
+  is_locked: 1
   is_selected: 0
   is_selecting: 0
   layer_add: {fileID: 0}
@@ -48611,7 +48611,7 @@ MonoBehaviour:
   ability_ingred: []
   is_selecting: 0
   is_selected: 0
-  is_locked: 0
+  is_locked: 1
 --- !u!222 &320200481821089098
 CanvasRenderer:
   m_ObjectHideFlags: 0
