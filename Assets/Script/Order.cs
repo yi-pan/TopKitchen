@@ -5,10 +5,10 @@ using UnityEngine;
 public class Order : MonoBehaviour
 {
 
-    public GameObject[] main;
-    public GameObject[] side;
-    public GameObject[] dessert;
-    public GameObject[] drink;
+    public GameObject main;
+    public GameObject side;
+    public GameObject dessert;
+    public GameObject drink;
 
     public GameObject mainPos;
     public GameObject sidePos;
@@ -18,19 +18,16 @@ public class Order : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int main_i = Random.Range(0, main.Length);
-        int side_i = Random.Range(0, side.Length);
-        GameObject main_dish = Instantiate(main[main_i], mainPos.transform);
-        main_dish.name = main[main_i].name;
-        //main_dish.transform.position = mainPos.transform.position;
-        GameObject side_dish = Instantiate(side[side_i], sidePos.transform);
-        side_dish.name = side[side_i].name;
+        GameObject main_dish = Instantiate(main, mainPos.transform);
+        main_dish.name = main.name;
+        GameObject side_dish = Instantiate(side, sidePos.transform);
+        side_dish.name = side.name;
         //side_dish.transform.position = sidePos.transform.position;
-        GameObject dessert_dish = Instantiate(dessert[0], dessertPos.transform);
-        dessert_dish.name = dessert[0].name;
+        GameObject dessert_dish = Instantiate(dessert, dessertPos.transform);
+        dessert_dish.name = dessert.name;
         //dessert_dish.transform.position = dessertPos.transform.position;
-        GameObject drink_dish = Instantiate(drink[0], drinkPos.transform);
-        drink_dish.name = drink[0].name;
+        GameObject drink_dish = Instantiate(drink, drinkPos.transform);
+        drink_dish.name = drink.name;
         //drink_dish.transform.position = drinkPos.transform.position;
     }
 

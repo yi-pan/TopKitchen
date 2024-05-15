@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5627295083219709340}
   - component: {fileID: 6916667673556591344}
-  - component: {fileID: 5003240647941114121}
-  - component: {fileID: -6448734265053990480}
-  - component: {fileID: -7965224487267693526}
+  - component: {fileID: 3624181294317925730}
+  - component: {fileID: -656712409528492836}
+  - component: {fileID: 8865482469696480671}
   m_Layer: 0
-  m_Name: dudu soup
+  m_Name: fried_egg
   m_TagString: Dish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,19 +51,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c62c52fa68e463d995e8c73935576a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: main
+  type: side
   hardness: 1
-  workload: 150
-  avg_price: 150
+  workload: 70
+  avg_price: 18
   materialList:
-  - fish
-  - shell
+  - egg
   cookingList:
-  - boil
-  cooked: {fileID: -575508096, guid: 5753779618a887945af64104def4fc88, type: 3}
+  - fried
+  cooked: {fileID: 1759441780, guid: 5753779618a887945af64104def4fc88, type: 3}
   cooked_status: 0
   startPosition: {x: 0, y: 0, z: 0}
---- !u!222 &5003240647941114121
+--- !u!222 &3624181294317925730
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,7 +70,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2170765661195981156}
   m_CullTransparentMesh: 1
---- !u!65 &-6448734265053990480
+--- !u!65 &-656712409528492836
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,7 +91,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-7965224487267693526
+--- !u!114 &8865482469696480671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,7 +111,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 511040032, guid: 59c494969a9f94448a0403c5ddfbdc22, type: 3}
+  m_Sprite: {fileID: -1063233682, guid: 59c494969a9f94448a0403c5ddfbdc22, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
