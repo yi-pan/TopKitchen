@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7543180010445523771}
   - component: {fileID: -914314259129807203}
   m_Layer: 0
-  m_Name: berry juice
+  m_Name: berry_juice
   m_TagString: Dish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
