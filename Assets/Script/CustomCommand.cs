@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using Yarn.Unity;
+using UnityEngine.SceneManagement;
 
 public class CustomCommand : MonoBehaviour
 {
@@ -34,11 +35,36 @@ public class CustomCommand : MonoBehaviour
         else bg.SetActive(true);
     }
 
+    private void inactive_bg(string target)
+    {
+        GameObject bg = GameObject.Find(target);
+        if (bg == null)
+        {
+            UnityEngine.Debug.Log("Can't find the target!");
+        }
+        else bg.SetActive(false);
+    }
+
+    private void change_scene(string target)
+    {
+        SceneManager.LoadScene(target);
+    }
+
     public void Awake()
     {
         dialogueRunner.AddCommandHandler<string>(
             "change_bg",     // the name of the command
             change_bg // the method to run
+        );
+
+        dialogueRunner.AddCommandHandler<string>(
+            "inactive_bg",     // the name of the command
+            inactive_bg // the method to run
+        );
+
+        dialogueRunner.AddCommandHandler<string>(
+            "change_scene",     // the name of the command
+            change_scene // the method to run
         );
     }
 

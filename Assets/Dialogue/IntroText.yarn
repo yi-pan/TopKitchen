@@ -1,17 +1,85 @@
 ﻿title: Start
 ---
 <<change_bg newspaper>>
-News: Capital Scandal - Royal Party Turns into Impact Scene, Forbidden Ingredients from Downtown Appear in the Capital. Five-Star Chef Penalized.
+News: Capital Scandal - Royal Party Turns into orgy Scene, Forbidden Ingredients from Downtown Appear in the Capital. Five-Star Chef Penalized.
 News: The class conflict intensifies, crystal mines are attacked, and the number of guards at the passageways increases.
 News: The whale season is approaching, but will the class division disrupt this peak tourism season?
-Main: The royal party turning into an impact event? Yes, I am the 'behind-the-scenes mastermind' of this farce. Two months ago, I was forced to leave the capital and return to this dilapidated place.
-Main: *stands up and looks at the dilapidated panorama of the restaurant* I swear I will reclaim everything that's mine.
+M: The royal party turning into an orgy event? Yes, I am the 'behind-the-scenes mastermind' of this farce. Two months ago, I was forced to leave the capital and return to this dilapidated place.
+M: *stands up and looks at the dilapidated panorama of the restaurant* I swear I will reclaim everything that's mine.
 <<jump Dalao>>
 ===
 
 title: Dalao
 ---
 <<change_bg restaurant>>
+<<inactive_bg newspaper>>
+Two months ago (M is standing at the entrance of the restaurant)
+M: Wait, who are you? Where is Shifu?
+D: Hey, you must be M. I came here 2 years ago... long story short, Shifu disappeared and left a message for us.
+<<change_bg letter>>
+<<inactive_bg restaurant>>
+A handwritten letter from Shifu and a city inspection notice.
+M: (I have no idea who this person in front of me is... But Shifu truly said to leave this restaurant to both of us...)
+M: (Are we fighting for the management role?)
+M: So... who exactly takes over?
+D: You. I just want some food to eat and a place to live.
+<<inactive_bg letter>>
+<<jump newBeginning>>
+===
+
+title: newBeginning
+---
+First Chapter: New Beginning
+<<change_bg restaurant>>
+M: As an ambitious chef, I just took over my Shifu's local restaurant. But...
+<<inactive_bg restaurant>>
+<<change_bg letter>>
+Notice : *Urgent* City management will perform regular inspection in 2 months. If any store fails the operational assessment, its business license will be revoked.
+M: Shifu, why did you not even contact me earlier!!!!
+<<inactive_bg letter>>
+<<change_bg restaurant>>
+M: Still, as an ambitious chef, I am sure that I can turn this into an Uptown-level FIVE STAR restaurant.
+M: To improve the kitchen's level, I posted a recruitment advertisement, hoping to recruit talented individuals to supervise the kitchen. However, two days have passed, and no one has applied.
+M: (confused.jpg)
+D: Do you really think this recruitment ad is appropriate? You're asking for a graduate from a prestigious culinary school like Le Cordon Bleu, with three years of experience, no meals or accommodation provided, and a ten-hour workday. In downtown, do you really think anyone will apply under these conditions?
+    -> Humbly accept
+            M: You're right, I may have been too idealistic. The environment here is indeed very different from my previous life. I need to reconsider our strategy. What do you think?
+            D: I'm not trying to dampen your spirits, but standing out too much here might not be a good thing. Keep a low profile, don't draw attention to the fact that you're from the uptown.
+            M: But as far as I know, this city relies on uptown tourism business being close to the 'Gateway'. Shouldn't we be more open to uptown people?
+            D: Things have changed. You should take a look at the recent newspapers; the atmosphere here is not as straightforward as you think.
+            M: True, there have been more reports about the resistance movement in the recent newspapers. Despite being close to the 'Gateway' and heavily guarded, the resistance seems to be growing bolder.
+    -> Stand firm
+            M: I'm not willing to let people who don't meet these standards enter my restaurant. Quality is the key differentiator between us and our competitors. I'm not prepared to compromise on this.
+            D: Then keep waiting. But finding people who meet those criteria in this place might be even harder than you think.
+            M: I understand the challenges here, but I believe there will always be suitable talents. We just need to work harder to find them.
+            D: Fine, it's your restaurant, your decision. But don't expect me to enthusiastically help.
+            M: I will consider setting up a trial period, so even if they don't initially meet all the standards, they have the chance to prove themselves.
+            D: Do as you please. Just don't let these decisions disrupt the normal operation of the kitchen.
+<<jump visitor>>
+===
+
+title: visitor
+---
+Unexpected Visitor - *(There's a knock at the door, interrupting the conversation)*
+B: *(walks confidently into the restaurant, with determined eyes)* I've heard the head chef here is from the uptown, so I've come specifically to learn. I'm already proficient in downtown dishes and now seek a new challenge—to learn more advanced skills.
+M: (responds excitedly) Great! We definitely need ambitious chefs like you.
+M: See, D? I told you we don't need to lower our recruitment standards.
+D: ...
+<<jump first_morning>>
+===
+
+title: first_morning
+---
+First Morning - We prepared a simple menu, as we only had three staff members. We decided to make one main dish and one side dish. Since the warehouse only had frozen fish of unknown age, we chose to make sashimi and a hot pot dish. Despite Big Boss's earnest learning, the finished products were mediocre, with an unusually bland taste.
+M: D, didn't you study under Shifu for two years? How did this turn out like this? After studying under Shifu for two years, I could win a gold medal in national competitions. How can I trust you to take over the kitchen like this?
+D: *(Shrugs with a cold expression)* To be honest, for most of those two years, I was just messing around. Shifu was often absent, so I did things casually, and no one really cared.
+M: Did Shifu sneak away because he was afraid of losing his reputation? Didn't you try adjusting the seasoning? This soup is basically flavorless.
+D: (takes a sip, looking puzzled) Is it too plain? Maybe your preference for strong flavors isn't very healthy, especially at your age.
+M: ... I'm not old at all, okay!?
+B: (waves dismissively, sounding arrogant) This dish is a piece of cake for me. Honestly, I could carve fish heads with one hand when I was eight. This level of cooking is hardly worth mentioning.
+M: (thinking to myself that this guy is all talk, but outwardly maintaining some respect) Hmm, very good, your skills are indeed impressive. If you have some spare time, help Big Boss with the seasoning. We don't want our customers to think our dishes taste like dishwater.
+B: Don't worry, seasoning is a piece of cake for me. I'll make sure every bite is a work of art.
+<<change_scene selection_ui>>
 ===
 
 title: Unity
