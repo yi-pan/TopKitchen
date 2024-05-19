@@ -50,6 +50,18 @@ public class CustomCommand : MonoBehaviour
         SceneManager.LoadScene(target);
     }
 
+    private void show(string target)
+    {
+        GameObject speaker = FindInActiveObjectByName(target);
+        if (speaker != null) speaker.gameObject.SetActive(true);
+    }
+
+    private void unshow(string target)
+    {
+        GameObject speaker = GameObject.Find(target);
+        if (speaker != null) speaker.gameObject.SetActive(false);
+    }
+
     public void Awake()
     {
         dialogueRunner.AddCommandHandler<string>(
@@ -65,6 +77,16 @@ public class CustomCommand : MonoBehaviour
         dialogueRunner.AddCommandHandler<string>(
             "change_scene",     // the name of the command
             change_scene // the method to run
+        );
+
+        dialogueRunner.AddCommandHandler<string>(
+            "show",     // the name of the command
+            show // the method to run
+        );
+
+        dialogueRunner.AddCommandHandler<string>(
+            "unshow",     // the name of the command
+            unshow // the method to run
         );
     }
 
