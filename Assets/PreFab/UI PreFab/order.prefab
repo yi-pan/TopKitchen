@@ -1096,16 +1096,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de27285583b947f999410cee0e18ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main:
-  - {fileID: 2170765661195981156, guid: 6ea57d4638ff549ce8ab253188bdd6ce, type: 3}
-  - {fileID: 2170765661195981156, guid: b434b56365e96428682a7a367aa2ee04, type: 3}
-  side:
-  - {fileID: 2170765661195981156, guid: 3b70baa7ebaef4d2cbfc4bd059544c35, type: 3}
-  - {fileID: 2170765661195981156, guid: 36a4b206683344b31afae07d3ba46a98, type: 3}
-  dessert:
-  - {fileID: 2170765661195981156, guid: ad08190443e7a4887b63ec5f83c659a2, type: 3}
-  drink:
-  - {fileID: 2170765661195981156, guid: fe0f4826d84514ab097013d6b60c21a2, type: 3}
+  main: {fileID: 0}
+  side: {fileID: 0}
   mainPos: {fileID: 4426539615890662927}
   sidePos: {fileID: 8438604833011394223}
   dessertPos: {fileID: 6643469946937506600}

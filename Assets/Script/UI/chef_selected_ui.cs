@@ -67,7 +67,6 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         
         chef_name.GetComponent<TMP_Text>().text = chef.name;
-
         fried.text = chef.fried.ToString();
         grill.text = chef.grill.ToString();
         bake.text = chef.bake.ToString();
@@ -154,18 +153,19 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (is_selected)
-        {
-            is_selected = false;
-            last_selected.is_selected = false;
-            last_selected.selected_black.SetActive(false);
-            is_empty = true;
-            ShowChef();
-        }
-        else
-        {
-            chefSelected.SelectSpot(this.transform.gameObject);
-        }
+        chefSelected.SelectSpot(this.transform.gameObject);
+        //if (is_selected)
+        //{
+        //    is_selected = false;
+        //    last_selected.is_selected = false;
+        //    last_selected.selected_black.SetActive(false);
+        //    is_empty = true;
+        //    ShowChef();
+        //}
+        //else
+        //{
+        //    chefSelected.SelectSpot(this.transform.gameObject);
+        //}
     }
     
     void Update()

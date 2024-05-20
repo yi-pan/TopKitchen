@@ -1,0 +1,15 @@
+***
+Chef:
+main; B; 3 4 5 5 4 5; fish meat fruit
+side; D; 3 1 3 3 3 3; shell fruit egg
+
+---
+Dish:
+dudu_soup; main; 1; 1; 100; 90; small_fish fish 2, duduclam shell 10; boil
+sashimi; side; 0; 1; 70; 18; small_fish fish 1; prepare
+
+---
+Dish Count:
+dudu_soup 3
+sashimi 3
+

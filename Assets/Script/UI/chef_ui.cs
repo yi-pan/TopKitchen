@@ -47,8 +47,8 @@ public class ChefUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         //Debug.Log(name + " " + fried + " " + ability_ingred[0]);
         if (!is_selected)
         {
-            chefSelect.SelectChef(this);
             is_selected = true;
+            chefSelect.SelectChef(this);
             selected_black.SetActive(true);
         }
     }

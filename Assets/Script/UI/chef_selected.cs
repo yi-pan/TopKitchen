@@ -69,18 +69,20 @@ public class ChefSelected : MonoBehaviour
     }
     void MoveToNextEmptySpot()
     {
-        selected_spot.is_selecting = false;
-        foreach(var c in chefsInOrder)
-        {
-            if(c.last_selected == null & !c.is_locked)
+        if(!is_full) {
+            selected_spot.is_selecting = false;
+            foreach (var c in chefsInOrder)
             {
-                //Debug.Log(c.gameObject.name);
-                if (c.gameObject.name.Equals("main")) latest_selected_spot = main_chef.gameObject;
-                if (c.gameObject.name.Equals("side")) latest_selected_spot = side_chef.gameObject;
-                if (c.gameObject.name.Equals("dessert")) latest_selected_spot = dessert_chef.gameObject;
-                if (c.gameObject.name.Equals("beverage")) latest_selected_spot = beverage_chef.gameObject;
-                if (c.gameObject.name.Equals("shopping")) latest_selected_spot = shopping_chef.gameObject;
-                break;
+                if (c.last_selected == null & !c.is_locked)
+                {
+                    //Debug.Log(c.gameObject.name);
+                    if (c.gameObject.name.Equals("main")) latest_selected_spot = main_chef.gameObject;
+                    if (c.gameObject.name.Equals("side")) latest_selected_spot = side_chef.gameObject;
+                    if (c.gameObject.name.Equals("dessert")) latest_selected_spot = dessert_chef.gameObject;
+                    if (c.gameObject.name.Equals("beverage")) latest_selected_spot = beverage_chef.gameObject;
+                    if (c.gameObject.name.Equals("shopping")) latest_selected_spot = shopping_chef.gameObject;
+                    break;
+                }
             }
         }
     }

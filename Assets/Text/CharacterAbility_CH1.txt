@@ -1,5 +1,5 @@
-BKing; 3 4 5 5 4 5; fish meat fruit
+B; 3 4 5 5 4 5; fish meat fruit
 BaoZao; 2 1 2 1 4 2; ferment milk
-DaLao; 3 1 3 3 3 3; shell fruit egg
+D; 3 1 3 3 3 3; shell fruit egg
 Intern; 1 1 2 2 1 1; bug
 Mama; 4 3 4 4 2 4; shell egg

@@ -62,9 +62,11 @@ public class GameManager : MonoBehaviour
         sideDishNames = new string[sideDishList.Length];
         populateArray(sideDishNames, sideDishList);
         dessertDishNames = new string[dessertDishList.Length];
+        /*
         populateArray(dessertDishNames, dessertDishList);
         beverageDishNames = new string[beverageDishList.Length];
         populateArray(beverageDishNames, beverageDishList);
+        */
 
         //populate current dish list
         for(var i = 2; i < DishData.Length-2; i++) {
@@ -82,6 +84,7 @@ public class GameManager : MonoBehaviour
                 sideDish.Add(sideDishList[dish_index]);
                 continue;
             }
+            /*
             dish_index = System.Array.IndexOf(dessertDishNames, DishData[i].Split(" ")[0]);
             if (dish_index != -1) {
                 dessertDish.Add(dessertDishList[dish_index]);
@@ -92,14 +95,17 @@ public class GameManager : MonoBehaviour
                 beverageDish.Add(beverageDishList[dish_index]);
                 continue;
             }
+            */
         }
 
         //test: spawn the first order, TODO:edit to be inside update
         GameObject order = (GameObject)Instantiate(orderPrefab, ui.transform);
         order.GetComponent<Order>().main = mainDish[0];
         order.GetComponent<Order>().side = sideDish[0];
+        /*
         order.GetComponent<Order>().dessert = dessertDish[0];
         order.GetComponent<Order>().drink = beverageDish[0];
+        */
     
     }
 
