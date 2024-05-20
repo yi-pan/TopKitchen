@@ -114,7 +114,32 @@ public class GameManager : MonoBehaviour
             */
         }
 
-    
+        //spawn first order
+        GameObject order = (GameObject)Instantiate(orderPrefab, ui.transform);
+        order.transform.SetSiblingIndex(order.transform.parent.transform.childCount - 2);
+        if (mainDish.Count != 0)
+        {
+            order.GetComponent<Order>().main = mainDish[0];
+            mainDish.RemoveAt(0);
+        }
+
+        if (sideDish.Count != 0)
+        {
+            order.GetComponent<Order>().side = sideDish[0];
+            sideDish.RemoveAt(0);
+        }
+
+        /*
+        order.GetComponent<Order>().dessert = dessertDish[0];
+        order.GetComponent<Order>().drink = beverageDish[0];
+        */
+        foreach (GameObject orderItem in orderList)
+        {
+            orderItem.transform.position = new Vector3(orderItem.transform.position.x - 250, orderItem.transform.position.y, 0);
+        }
+        orderList.Add(order);
+
+
     }
 
     void populateArray(string[] names, GameObject[] list) {
@@ -133,6 +158,7 @@ public class GameManager : MonoBehaviour
             timer = 0.0f;
             //test: spawn the first order, TODO:edit to be inside update
             GameObject order = (GameObject)Instantiate(orderPrefab, ui.transform);
+            order.transform.SetSiblingIndex(order.transform.parent.transform.childCount - 2);
             if (mainDish.Count != 0)
             {
                 order.GetComponent<Order>().main = mainDish[0];

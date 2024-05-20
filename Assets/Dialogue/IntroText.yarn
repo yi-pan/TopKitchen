@@ -16,12 +16,14 @@ title: Dalao
 <<change_bg restaurant>>
 <<inactive_bg newspaper>>
 Two months ago (M is standing at the entrance of the restaurant)
+<<inactive_bg restaurant>>
+<<change_bg restaurant_darkened>>
 <<show M>>
 M: Wait, who are you? Where is Shifu?
 <<show D>>
 D: Hey, you must be M. I came here 2 years ago... long story short, Shifu disappeared and left a message for us.
 <<change_bg letter>>
-<<inactive_bg restaurant>>
+<<inactive_bg restaurant_darkened>>
 <<unshow D>>
 <<unshow M>>
 A handwritten letter from Shifu and a city inspection notice.
@@ -40,17 +42,17 @@ D: You. I just want some food to eat and a place to live.
 title: newBeginning
 ---
 First Chapter: New Beginning
-<<change_bg restaurant>>
+<<change_bg restaurant_darkened>>
 <<show M>>
 M: As an ambitious chef, I just took over my Shifu's local restaurant. But...
 <<unshow M>>
-<<inactive_bg restaurant>>
+<<inactive_bg restaurant_darkened>>
 <<change_bg letter>>
 Notice : *Urgent* City management will perform regular inspection in 2 months. If any store fails the operational assessment, its business license will be revoked.
 <<show M>>
 M: Shifu, why did you not even contact me earlier!!!!
 <<inactive_bg letter>>
-<<change_bg restaurant>>
+<<change_bg restaurant_darkened>>
 M: Still, as an ambitious chef, I am sure that I can turn this into an Uptown-level FIVE STAR restaurant.
 M: To improve the kitchen's level, I posted a recruitment advertisement, hoping to recruit talented individuals to supervise the kitchen. However, two days have passed, and no one has applied.
 M: (confused.jpg)

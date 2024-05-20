@@ -50,9 +50,9 @@ public class Order : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        waiting.value = timer / 20;
+        waiting.value = timer / 30;
         //TODO: if finished, disppear
-        if (timer >= 20f || (main.GetComponent<Dish>().cooked_status && side.GetComponent<Dish>().cooked_status))
+        if (timer >= 30f || (main.GetComponent<Dish>().cooked_status && side.GetComponent<Dish>().cooked_status))
         {
             if (main.GetComponent<Dish>().cooked_status && side.GetComponent<Dish>().cooked_status) GameManager.GetComponent<GameManager>().total_price += main.GetComponent<Dish>().avg_price + side.GetComponent<Dish>().avg_price;
             GameManager.GetComponent<GameManager>().orderList.Remove(gameObject);
