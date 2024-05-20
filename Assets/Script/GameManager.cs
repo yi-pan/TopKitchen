@@ -34,6 +34,13 @@ public class GameManager : MonoBehaviour
     public GameObject ui;
     public GameObject orderPrefab;
 
+    //TODO: total price
+    public float total_price = 0;
+
+    //orderlist
+    public static List<GameObject> orderList = new List<GameObject>();
+    float timer = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,18 +77,24 @@ public class GameManager : MonoBehaviour
 
         //populate current dish list
         for(var i = 2; i < DishData.Length-2; i++) {
-            //Debug.Log(DishData[i]);
+            Debug.Log(DishData[i]);
             //Debug.Log(mainDishNames);
             //Debug.Log(DishData[i].Split(" ")[0]);
             int dish_index = System.Array.IndexOf(mainDishNames, DishData[i].Split(" ")[0]);
             //Debug.Log(dish_index);
             if (dish_index != -1) {
-                mainDish.Add(mainDishList[dish_index]);
+                for (var l = 0; l < int.Parse(DishData[i].Split(" ")[1]); l++)
+                {
+                    mainDish.Add(mainDishList[dish_index]);
+                }
                 continue;
             }
             dish_index = System.Array.IndexOf(sideDishNames, DishData[i].Split(" ")[0]);
             if (dish_index != -1) {
-                sideDish.Add(sideDishList[dish_index]);
+                for (var l = 0; l < int.Parse(DishData[i].Split(" ")[1]); l++)
+                {
+                    sideDish.Add(sideDishList[dish_index]);
+                }
                 continue;
             }
             /*
@@ -98,14 +111,6 @@ public class GameManager : MonoBehaviour
             */
         }
 
-        //test: spawn the first order, TODO:edit to be inside update
-        GameObject order = (GameObject)Instantiate(orderPrefab, ui.transform);
-        order.GetComponent<Order>().main = mainDish[0];
-        order.GetComponent<Order>().side = sideDish[0];
-        /*
-        order.GetComponent<Order>().dessert = dessertDish[0];
-        order.GetComponent<Order>().drink = beverageDish[0];
-        */
     
     }
 
@@ -118,7 +123,35 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+        //Debug.Log(Time.deltaTime);
+        if (timer >= 5.0f && (mainDish.Count > 0 || sideDish.Count > 0))
+        {
+            timer = 0.0f;
+            //test: spawn the first order, TODO:edit to be inside update
+            GameObject order = (GameObject)Instantiate(orderPrefab, ui.transform);
+            if (mainDish.Count != 0)
+            {
+                order.GetComponent<Order>().main = mainDish[0];
+                mainDish.RemoveAt(0);
+            } 
+
+            if (sideDish.Count != 0)
+            {
+                order.GetComponent<Order>().side = sideDish[0];
+                sideDish.RemoveAt(0);
+            }
+
+            /*
+            order.GetComponent<Order>().dessert = dessertDish[0];
+            order.GetComponent<Order>().drink = beverageDish[0];
+            */
+            foreach (GameObject orderItem in orderList)
+            {
+                orderItem.transform.position = new Vector3(orderItem.transform.position.x - 250, orderItem.transform.position.y, 0);
+            }
+            orderList.Add(order);
+        }
     }
 
 }

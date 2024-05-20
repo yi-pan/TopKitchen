@@ -17,9 +17,12 @@ public class Order : MonoBehaviour
     public GameObject dessertPos;
     public GameObject drinkPos;
 
+    public GameObject GameManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        GameManager = GameObject.Find("Game Manager");
         GameObject main_dish = Instantiate(main, mainPos.transform);
         main_dish.name = main.name;
         GameObject side_dish = Instantiate(side, sidePos.transform);
@@ -39,5 +42,10 @@ public class Order : MonoBehaviour
     void Update()
     {
         //TODO: if finished, disppear
+        if (main.GetComponent<Dish>().cooked_status && side.GetComponent<Dish>().cooked_status)
+        {
+            GameManager.GetComponent<GameManager>().total_price += main.GetComponent<Dish>().avg_price + side.GetComponent<Dish>().avg_price;
+            Destroy(gameObject);
+        }
     }
 }

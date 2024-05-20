@@ -53,8 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: side
   hardness: 1
-  workload: 100
-  avg_price: 50
+  workload: 70
+  avg_price: 18
   materialList:
   - fish
   cookingList:

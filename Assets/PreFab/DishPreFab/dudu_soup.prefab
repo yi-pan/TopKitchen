@@ -53,8 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: main
   hardness: 1
-  workload: 150
-  avg_price: 150
+  workload: 100
+  avg_price: 90
   materialList:
   - fish
   - shell

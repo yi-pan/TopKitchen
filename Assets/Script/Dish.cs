@@ -22,7 +22,7 @@ public class Dish : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
     private void Start()
     {
         thisImage = GetComponent<Image>();
-        startPosition = transform.position;
+        startPosition = transform.localPosition;
         cooked_status = false;
     }
 
@@ -51,7 +51,7 @@ public class Dish : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
             gameObject.GetComponent<Image>().sprite = cooked;
         }
     }
-
+    /*
     public void OnDrop(PointerEventData eventData)
     {
         //Debug.Log("collide");
@@ -65,4 +65,5 @@ public class Dish : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
             }
         }
     }
+    */
 }
