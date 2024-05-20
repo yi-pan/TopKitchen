@@ -1,0 +1,9 @@
+﻿title: Start
+---
+<<declare $total = 0>>
+Calculating revenue...
+<<show M>>
+M: We only earned {set_money()}...
+M: What a shame...
+TO BE CONTINUED
+===

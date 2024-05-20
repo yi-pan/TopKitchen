@@ -10,10 +10,10 @@ public class GameManager : MonoBehaviour
     string[] ChefData;
     string[] DishData;
 
-    public static List<GameObject> mainDish = new List<GameObject>();
-    public static List<GameObject> sideDish = new List<GameObject>();
-    public static List<GameObject> dessertDish = new List<GameObject>();
-    public static List<GameObject> beverageDish = new List<GameObject>();
+    public List<GameObject> mainDish = new List<GameObject>();
+    public List<GameObject> sideDish = new List<GameObject>();
+    public List<GameObject> dessertDish = new List<GameObject>();
+    public List<GameObject> beverageDish = new List<GameObject>();
 
     public GameObject[] mainDishList;
     public GameObject[] sideDishList;
@@ -38,8 +38,11 @@ public class GameManager : MonoBehaviour
     public float total_price = 0;
 
     //orderlist
-    public static List<GameObject> orderList = new List<GameObject>();
+    public List<GameObject> orderList = new List<GameObject>();
     float timer = 0.0f;
+
+    //dialogue TODO
+    public GameObject dialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -151,6 +154,10 @@ public class GameManager : MonoBehaviour
                 orderItem.transform.position = new Vector3(orderItem.transform.position.x - 250, orderItem.transform.position.y, 0);
             }
             orderList.Add(order);
+        }
+        if (mainDish.Count <= 0 && sideDish.Count <= 0 && orderList.Count <= 0)
+        {
+            dialogue.SetActive(true);
         }
     }
 

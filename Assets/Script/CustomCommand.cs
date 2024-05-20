@@ -62,6 +62,19 @@ public class CustomCommand : MonoBehaviour
         if (speaker != null) speaker.gameObject.SetActive(false);
     }
 
+    private int set_money()
+    {
+        UnityEngine.Debug.Log("ran set money");
+        return (int) gameObject.GetComponent<GameManager>().total_price;
+    }
+
+    [YarnFunction("get_money")]
+    public static int get_money()
+    {
+        UnityEngine.Debug.Log("ran set money");
+        return (int)GameObject.Find("Game Manager").GetComponent<GameManager>().total_price;
+    }
+
     public void Awake()
     {
         dialogueRunner.AddCommandHandler<string>(
@@ -88,6 +101,12 @@ public class CustomCommand : MonoBehaviour
             "unshow",     // the name of the command
             unshow // the method to run
         );
+
+        dialogueRunner.AddFunction<int>(
+            "set_money",     // the name of the command
+            set_money // the method to run
+        );
+
     }
 
 }
