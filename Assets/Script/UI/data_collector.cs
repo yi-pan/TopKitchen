@@ -4,6 +4,7 @@ using System.IO;
 using TMPro;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.UI;
@@ -36,14 +37,26 @@ public class DataCollector : MonoBehaviour
 
     public GameObject summary;
 
+    public bool chef_collected = false;
+
     public bool shopping_done = false;
+
+    public GameObject dataCollected;
+    string currentData;
+        
+        
     // Start is called before the first frame update
     void Start()
     {
-        path = "Assets/Text/CollectedData.txt";
-        // clear the textfile
-        File.WriteAllText(path, "");
+        path = Application.streamingAssetsPath + "/Text/CollectedData.txt";
+        //Debug.Log(path);
 
+        //path = "Assets/Text/CollectedData.txt";
+        // clear the textfile
+
+        //File.WriteAllText(path, "");
+
+        //Debug.Log(AssetDatabase.GetAssetPath(dataCollected));
         //btn_open.transform.GetChild(1).gameObject.SetActive(true);
         //btn_open.GetComponent<Button>().interactable = true;
         //btn_open.SetActive(true);
@@ -72,9 +85,8 @@ public class DataCollector : MonoBehaviour
 
     public void CollectChefData()
     {
-        sw = new StreamWriter(path, true);
-        sw.WriteLine("***");
-        sw.WriteLine("Chef:");
+        currentData = "";
+        currentData += "***\nChef:\n";
         foreach (ChefSelectedUI c in selected_chef_group.chefsInOrder)
         {
             if (!c.is_locked)
@@ -90,21 +102,19 @@ public class DataCollector : MonoBehaviour
             string chef_detail = c.printChefDetail();
             chef_detail = chef_detail.Substring(0, chef_detail.Length - 1);
             //Debug.Log(chef_detail);
-            sw.Write(chef_position + "; " + chef_detail + "\n");
+            currentData += (chef_position + "; " + chef_detail + "\n");
         }
-        sw.Close();
+        CollectDishData();
     }
 
     public void CollectDishData()
     {
-        sw = new StreamWriter(path, true);
         foreach (DishToday d in selected_dish_group.dishesInOrder)
         {
             selected_dishes.Add(dishList.GetDishDetail(d.dish_name));
         }
         string dish_detail = PrintDishDetails();
-        sw.WriteLine(dish_detail);
-        sw.Close();
+        currentData += dish_detail;
     }
 
     public string PrintDishDetails()
@@ -132,21 +142,20 @@ public class DataCollector : MonoBehaviour
 
     public void CollectDishCount()
     {
-        sw = new StreamWriter(path, true);
-        string dish_count = "---\nDish Count:\n";
+        string dish_count = "\n---\nDish Count:\n";
         foreach(DishwCount dish in dish_w_count_list)
         {
             dish_count += dish.dish_name + " " + dish.dish_count + "\n";
         }
-        sw.WriteLine(dish_count);
-        sw.Close();
+        currentData += dish_count;
+        dataCollected.GetComponent<collectData>().collectedData += currentData;
     }
 
-    public void PrintAllInfo()
-    {
-        sr = new StreamReader(path, true);
-        TMP_Text summary_text = summary.transform.GetComponent<TMP_Text>();
-        summary_text.text = sr.ReadToEnd();
-        sr.Close();
-    }
+    //public void PrintAllInfo()
+    //{
+    //    sr = new StreamReader(path, true);
+    //    TMP_Text summary_text = summary.transform.GetComponent<TMP_Text>();
+    //    summary_text.text = sr.ReadToEnd();
+    //    sr.Close();
+    //}
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public TextAsset textFile;     // drop your file here in inspector
+    //public TextAsset textFile;     // drop your file here in inspector
+    public GameObject collectedData;
     string[] Days;
     string[] DataList;
     string[] ChefData;
@@ -47,7 +48,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string text = textFile.text;  //this is the content as string
+        collectedData = GameObject.Find("collectedData");
+        string text = collectedData.GetComponent<collectData>().collectedData;
+            //= textFile.text;  //this is the content as string
         Days = text.Split("***");
         DataList = Days[Days.Length - 1].Split("---");
         ChefData = DataList[0].Split("\n");
@@ -61,7 +64,7 @@ public class GameManager : MonoBehaviour
 
         //spawn chef at correct position
         for(var i = 2; i < ChefData.Length-2; i++) {
-            //Debug.Log(ChefData[i]);
+            Debug.Log(ChefData[i]);
             int spawn_index = System.Array.IndexOf(ChefNames, ChefData[i].Split("; ")[1]);
             Instantiate(Chefs[spawn_index], positions[i-2], Quaternion.identity);
         }
@@ -79,7 +82,7 @@ public class GameManager : MonoBehaviour
         */
 
         //populate current dish list
-        for(var i = 2; i < DishData.Length-2; i++) {
+        for(var i = 2; i < DishData.Length; i++) {
             Debug.Log(DishData[i]);
             //Debug.Log(mainDishNames);
             //Debug.Log(DishData[i].Split(" ")[0]);
@@ -153,7 +156,7 @@ public class GameManager : MonoBehaviour
     {
         timer += Time.deltaTime;
         //Debug.Log(Time.deltaTime);
-        if (timer >= 5.0f && (mainDish.Count > 0 || sideDish.Count > 0))
+        if (timer >= 5.0f && (mainDish.Count > 0 && sideDish.Count > 0))
         {
             timer = 0.0f;
             //test: spawn the first order, TODO:edit to be inside update
