@@ -21,6 +21,8 @@ public class Order : MonoBehaviour
 
     public GameObject GameManager;
 
+    public GameObject[] content = new GameObject[4];
+
     float timer = 0.0f;
 
     Slider waiting;
@@ -31,10 +33,22 @@ public class Order : MonoBehaviour
         waiting = this.transform.Find("Slider").GetComponent<Slider>();
 
         GameManager = GameObject.Find("Game Manager");
-        GameObject main_dish = Instantiate(main, mainPos.transform);
-        main_dish.name = main.name;
-        GameObject side_dish = Instantiate(side, sidePos.transform);
-        side_dish.name = side.name;
+        if (main != null)
+        {
+            GameObject main_dish = Instantiate(main, mainPos.transform);
+            main_dish.name = main.name;
+            main = main_dish;
+            content[0] = main;
+        }
+
+        if (side != null)
+        {
+            GameObject side_dish = Instantiate(side, sidePos.transform);
+            side_dish.name = side.name;
+            side = side_dish;
+            content[1] = side;
+        }
+
         //side_dish.transform.position = sidePos.transform.position;
         /*
         GameObject dessert_dish = Instantiate(dessert, dessertPos.transform);
@@ -52,9 +66,24 @@ public class Order : MonoBehaviour
         timer += Time.deltaTime;
         waiting.value = timer / 30;
         //TODO: if finished, disppear
-        if (timer >= 30f || (main.GetComponent<Dish>().cooked_status && side.GetComponent<Dish>().cooked_status))
+        bool total_cooked = true;
+        float add_price = 0f;
+        for (var i = 0; i < content.Length; i++) 
         {
-            if (main.GetComponent<Dish>().cooked_status && side.GetComponent<Dish>().cooked_status) GameManager.GetComponent<GameManager>().total_price += main.GetComponent<Dish>().avg_price + side.GetComponent<Dish>().avg_price;
+            GameObject child = content[i];
+            if(content[i] != null)
+            {
+                total_cooked = total_cooked && child.GetComponent<Dish>().cooked_status;
+                total_cooked = total_cooked && child.GetComponent<Dish>().inSlot;
+                //g.Log(child.GetComponent<Dish>().cooked_status);
+                add_price += child.GetComponent<Dish>().avg_price;
+            }
+
+        }
+        //Debug.Log(total_cooked);
+        if (timer >= 30f || total_cooked)
+        {
+            if (total_cooked) GameManager.GetComponent<GameManager>().total_price += add_price;
             GameManager.GetComponent<GameManager>().orderList.Remove(gameObject);
             Destroy(gameObject);
         }

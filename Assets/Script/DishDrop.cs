@@ -27,13 +27,17 @@ public class DishDrop : MonoBehaviour, IDropHandler
                         cookTable.GetComponent<CookTable>().currentDish = eventData.pointerDrag.gameObject;
                 } else if (this.gameObject.tag == "Slot")
                 {
+                    draggable.inSlot = true;
+                    //Debug.Log("inSlot");
+                    //Debug.Log(draggable.inSlot);
                     if (string.Compare(draggable.type, "main") == 0)
                     {
-                        this.transform.parent.GetComponent<Order>().main = eventData.pointerDrag.gameObject;
+                        Debug.Log("infunc");
+                        this.transform.parent.GetComponent<Order>().content[0] = eventData.pointerDrag.gameObject;
                         eventData.pointerDrag.transform.SetParent(this.transform.parent);
                     } else if (string.Compare(draggable.type, "side") == 0)
                     {
-                        this.transform.parent.GetComponent<Order>().side = eventData.pointerDrag.gameObject;
+                        this.transform.parent.GetComponent<Order>().content[1] = eventData.pointerDrag.gameObject;
                         eventData.pointerDrag.transform.SetParent(this.transform.parent);
                     }
 

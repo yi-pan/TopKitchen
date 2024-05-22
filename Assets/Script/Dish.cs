@@ -14,6 +14,7 @@ public class Dish : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
     public string[] cookingList;
     public Sprite cooked;
     public bool cooked_status;
+    public bool inSlot;
 
     //drag and drop ui
     Image thisImage;
@@ -24,6 +25,7 @@ public class Dish : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
         thisImage = GetComponent<Image>();
         startPosition = transform.localPosition;
         cooked_status = false;
+        inSlot = false;
     }
 
     public void OnBeginDrag(PointerEventData eventData)

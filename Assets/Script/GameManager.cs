@@ -156,7 +156,7 @@ public class GameManager : MonoBehaviour
     {
         timer += Time.deltaTime;
         //Debug.Log(Time.deltaTime);
-        if (timer >= 5.0f && (mainDish.Count > 0 && sideDish.Count > 0))
+        if (timer >= 5.0f && (mainDish.Count > 0 || sideDish.Count > 0))
         {
             timer = 0.0f;
             //test: spawn the first order, TODO:edit to be inside update
