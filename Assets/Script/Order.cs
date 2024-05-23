@@ -73,10 +73,16 @@ public class Order : MonoBehaviour
             GameObject child = content[i];
             if(content[i] != null)
             {
-                total_cooked = total_cooked && child.GetComponent<Dish>().cooked_status;
-                total_cooked = total_cooked && child.GetComponent<Dish>().inSlot;
+                //Debug.Log(child.name);
+                var finished = false;
+                if (content[i].GetComponent<Dish>() != null)
+                {
+                    finished = child.GetComponent<Dish>().cooked_status && child.GetComponent<Dish>().inSlot;
+                    add_price += child.GetComponent<Dish>().avg_price;
+                }
+                total_cooked = total_cooked && finished;
                 //g.Log(child.GetComponent<Dish>().cooked_status);
-                add_price += child.GetComponent<Dish>().avg_price;
+               
             }
 
         }

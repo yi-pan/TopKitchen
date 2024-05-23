@@ -31,6 +31,27 @@ public class Dish : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
     public void OnBeginDrag(PointerEventData eventData)
     {
         thisImage.raycastTarget = false;
+        Debug.Log(this.transform.parent.parent.transform.name);
+        if (this.transform.parent.parent.tag == "Order")
+        {
+            GameObject duplicate = Instantiate(gameObject, this.transform.parent.transform);
+            duplicate.name = this.transform.name;
+            duplicate.GetComponent<Image>().raycastTarget = true;
+            //Dish dup_script = duplicate.GetComponent<Dish>();
+            //Destroy(dup_script);
+            Debug.Log("duplicate");
+            if (string.Compare(type, "main") == 0)
+            {
+                this.transform.parent.parent.GetComponent<Order>().main = duplicate;
+                this.transform.parent.parent.GetComponent<Order>().content[0] = duplicate;
+            }
+            if (string.Compare(type, "side") == 0)
+            {
+                this.transform.parent.parent.GetComponent<Order>().side = duplicate;
+                this.transform.parent.parent.GetComponent<Order>().content[1] = duplicate;
+            }
+        }
+
     }
     
     public void OnDrag(PointerEventData eventData)

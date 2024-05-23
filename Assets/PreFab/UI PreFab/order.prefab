@@ -461,6 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookTable: {fileID: 0}
+  free_dish: {fileID: 0}
 --- !u!222 &4950573691370866383
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -777,6 +778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookTable: {fileID: 0}
+  free_dish: {fileID: 0}
 --- !u!222 &6336178359833543228
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -990,7 +992,7 @@ GameObject:
   - component: {fileID: 6388343423196379417}
   m_Layer: 5
   m_Name: order
-  m_TagString: Untagged
+  m_TagString: Order
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1046,6 +1048,11 @@ MonoBehaviour:
   dessertPos: {fileID: 6643469946937506600}
   drinkPos: {fileID: 8407640283097342240}
   GameManager: {fileID: 0}
+  content:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &6388343423196379417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,6 +1136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookTable: {fileID: 0}
+  free_dish: {fileID: 0}
 --- !u!222 &4515981046263367258
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1220,6 +1228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookTable: {fileID: 0}
+  free_dish: {fileID: 0}
 --- !u!222 &3011147975961555134
 CanvasRenderer:
   m_ObjectHideFlags: 0

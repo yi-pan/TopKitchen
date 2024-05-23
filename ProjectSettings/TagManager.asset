@@ -8,6 +8,7 @@ TagManager:
   - Dish
   - Table
   - Slot
+  - Order
   layers:
   - Default
   - TransparentFX
