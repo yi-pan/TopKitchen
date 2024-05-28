@@ -6,17 +6,20 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+// Track which chef is selected at current position (main/side/dessert/beverage/shopping)
 public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    public bool is_locked;
-    public bool is_selecting;
-    public bool is_selected;
+    public bool is_locked; // position is locked 
+    public bool is_selecting; // position is being HOVERED
+    public bool is_selected; // position is CLICKED
 
-    public bool is_empty;
+    public bool is_empty; // position is empty -> add icon is on
 
-    public ChefUI last_selected;
+    public ChefUI last_selected; // track which chef is selected for this position. 
 
-    public ChefSelected chefSelected;
+
+    // track the latest_selected_spot (main/side/dessert/beverage/shopping) & track which chef is at which position & check if is_full
+    public ChefSelected chefSelected; // the whole chef selection group. 
 
     public GameObject selected_bk;
     public GameObject add_bk;
@@ -29,6 +32,8 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public GameObject ingred1, ingred2, ingred3, ingred4;
 
     public Sprite[] ingred_icons;
+
+    public Sprite[] profile_sprites;
 
     public ChefUI selectedChef;
 
@@ -74,14 +79,27 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         steam.text = chef.steam.ToString();
         prepare.text = chef.prepare.ToString();
         SetIngred(chef.ability_ingred);
-
+        SetProfile(chef.name);
         if (is_empty)
         {
             is_empty = false;
             ShowChef();
         }
     }
-  
+
+    private void SetProfile(string name)
+    {
+        Image profile_img = profile.GetComponent<Image>();
+
+        Sprite profile_sprite = null;
+
+        if (name.Equals("B")) profile_sprite = profile_sprites[0];
+        else if (name.Equals("D")) profile_sprite = profile_sprites[1];
+        else profile_sprite = profile_sprites[0];
+
+        profile_img.sprite = profile_sprite;
+
+    }
 
     private void SetIngred(List<string> ability_ingred)
     {
@@ -151,21 +169,11 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         if(!is_selected) is_selecting = false;
     }
 
+    // ChefSelectedUI is cliked
     public void OnPointerClick(PointerEventData eventData)
     {
+        // if the spot is not selected, select it 
         chefSelected.SelectSpot(this.transform.gameObject);
-        //if (is_selected)
-        //{
-        //    is_selected = false;
-        //    last_selected.is_selected = false;
-        //    last_selected.selected_black.SetActive(false);
-        //    is_empty = true;
-        //    ShowChef();
-        //}
-        //else
-        //{
-        //    chefSelected.SelectSpot(this.transform.gameObject);
-        //}
     }
     
     void Update()
@@ -182,6 +190,4 @@ public class ChefSelectedUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         ability_cook.SetActive(!is_empty);
         ability_ingred.SetActive(!is_empty);
     }
-
-    
 }

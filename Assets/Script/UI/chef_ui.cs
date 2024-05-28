@@ -23,9 +23,9 @@ public class ChefUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     void Start()
     {
         profile = transform.GetChild(0).gameObject;
-        name_text = transform.GetChild(1).GetComponent<TMP_Text>();
+        name_text = transform.GetChild(2).GetComponent<TMP_Text>();
         name_text.text = chef_name;
-        selected_black = transform.GetChild(2).gameObject;
+        selected_black = transform.GetChild(3).gameObject;
         selected_black.SetActive(false);
         if(is_locked) transform.gameObject.SetActive(false);
     }
@@ -34,17 +34,17 @@ public class ChefUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     {
         if (is_selecting)
         {
-            profile.transform.GetComponent<Image>().color = Color.yellow;
+            profile.transform.GetComponent<Image>().color = new Color(0.9764706f, 0.7450981f, 0.3843137f, 1f);
         }
         else
         {
-            profile.transform.GetComponent<Image>().color = new Color(0.8745098f, 0.9019608f, 0.9137255f, 1f);
+            profile.transform.GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 1f);
         }
     }
 
+    // ChefUI is clicked
     public void OnPointerClick(PointerEventData eventData)
     {
-        //Debug.Log(name + " " + fried + " " + ability_ingred[0]);
         if (!is_selected)
         {
             is_selected = true;
@@ -53,6 +53,7 @@ public class ChefUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         }
     }
 
+    // ChefUI is hovered
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (!is_selected)
@@ -62,14 +63,14 @@ public class ChefUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         }
     }
 
+    // pointer exit the ChefUI, Hide chef detail if not selected
     public void OnPointerExit(PointerEventData eventData)
     {
         if (!is_selected)
         {
             chefSelect.HideChef();
         }
-        is_selecting = false;
-        
+        is_selecting = false;  
     }
 
     public void Reset()

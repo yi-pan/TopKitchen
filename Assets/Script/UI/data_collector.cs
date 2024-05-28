@@ -69,6 +69,11 @@ public class DataCollector : MonoBehaviour
             btn_shopping.transform.GetChild(1).gameObject.SetActive(true);
             btn_shopping.GetComponent<Button>().interactable = true;
         }
+        else
+        {
+            btn_shopping.transform.GetChild(1).gameObject.SetActive(false);
+            btn_shopping.GetComponent<Button>().interactable = false;
+        }
 
         if (shopping_done)
         {
@@ -150,12 +155,4 @@ public class DataCollector : MonoBehaviour
         currentData += dish_count;
         dataCollected.GetComponent<collectData>().collectedData += currentData;
     }
-
-    //public void PrintAllInfo()
-    //{
-    //    sr = new StreamReader(path, true);
-    //    TMP_Text summary_text = summary.transform.GetComponent<TMP_Text>();
-    //    summary_text.text = sr.ReadToEnd();
-    //    sr.Close();
-    //}
 }
